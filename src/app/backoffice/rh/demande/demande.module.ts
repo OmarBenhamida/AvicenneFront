@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DemandeComponent } from './demande/demande.component';
+import { DemandeComponent } from './demande.component';
 
 
 

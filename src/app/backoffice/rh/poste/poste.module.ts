@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AffectationComponent } from './affectation/affectation.component';
-import { PosteComponent } from './poste/poste.component';
+import { PosteComponent } from './poste.component';
 
 
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ListAttestationComponent } from './list-attestation/list-attestation.component';
 import { AddDemandeComponent } from './add-demande/add-demande.component';
 import { DetailsDemandeComponent } from './details-demande/details-demande.component';
-import { AttestationtravailComponent } from './attestationtravail/attestationtravail.component';
+import { AttestationtravailComponent } from './attestationtravail.component';
 
 
 
