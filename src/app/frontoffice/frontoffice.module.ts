@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ContactComponent } from './contact/contact.component';
 import { FrontofficeComponent } from './frontoffice.component';
+import { LocalisationComponent } from './localisation/localisation.component';
 
 
 
@@ -10,7 +11,8 @@ import { FrontofficeComponent } from './frontoffice.component';
   declarations: [
     AccueilComponent,
     ContactComponent,
-    FrontofficeComponent
+    FrontofficeComponent,
+    LocalisationComponent
   ],
   imports: [
     CommonModule
