@@ -10,6 +10,12 @@ export class ComptabiliteComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
+    
+
+
+
   }
 
 }

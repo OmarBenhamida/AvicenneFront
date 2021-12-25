@@ -1,1 +1,12 @@
 <p>facture works!</p>
+
+
+<a class="nav-link" [routerLink]="['/backoffice/comptabilite/facture/add']" routerLinkActive="router-link-active">
+    <i class="fas fa-sitemap"></i><span>&nbsp;add</span></a> <br><br>
+<a class="nav-link" [routerLink]="['/backoffice/comptabilite/facture/details']" routerLinkActive="router-link-active">
+    <i class="fas fa-sitemap"></i><span>&nbsp;details</span></a> <br><br>
+    <a class="nav-link" [routerLink]="['/backoffice/comptabilite/facture/list']" routerLinkActive="router-link-active">
+        <i class="fas fa-sitemap"></i><span>&nbsp;list</span></a> <br><br>
+ 
+
+<router-outlet></router-outlet>

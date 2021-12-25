@@ -4,6 +4,7 @@ import { AddFactureComponent } from './add-facture/add-facture.component';
 import { DetailsFactureComponent } from './details-facture/details-facture.component';
 import { ListFactureComponent } from './list-facture/list-facture.component';
 import { FactureComponent } from './facture.component';
+import { FactureRoutingModule } from './facture-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { FactureComponent } from './facture.component';
     FactureComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FactureRoutingModule
   ]
 })
 export class FactureModule { }
