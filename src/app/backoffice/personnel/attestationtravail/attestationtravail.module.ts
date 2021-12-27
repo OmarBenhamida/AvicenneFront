@@ -4,6 +4,8 @@ import { ListAttestationComponent } from './list-attestation/list-attestation.co
 import { AddDemandeComponent } from './add-demande/add-demande.component';
 import { DetailsDemandeComponent } from './details-demande/details-demande.component';
 import { AttestationtravailComponent } from './attestationtravail.component';
+import { ErreComponent } from './erre/erre.component';
+import { AttestationtravailRoutingModule } from './attestationtravail-routing.module';
 
 
 
@@ -12,10 +14,12 @@ import { AttestationtravailComponent } from './attestationtravail.component';
     ListAttestationComponent,
     AddDemandeComponent,
     DetailsDemandeComponent,
-    AttestationtravailComponent
+    AttestationtravailComponent,
+    ErreComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AttestationtravailRoutingModule
   ]
 })
 export class AttestationtravailModule { }

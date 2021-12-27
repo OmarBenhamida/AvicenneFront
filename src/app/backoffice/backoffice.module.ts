@@ -4,12 +4,14 @@ import { BackofficeComponent } from './backoffice.component';
 import { BackofficeRoutingModule } from './backoffice-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './menu/menu.component';
 
 
 
 @NgModule({
   declarations: [
-    BackofficeComponent
+    BackofficeComponent,
+    MenuComponent
   ],
   imports: [
     HttpClientModule,

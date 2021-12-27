@@ -4,6 +4,8 @@ import { FichepaieComponent } from './fichepaie.component';
 import { AddFichepaieComponent } from './add-fichepaie/add-fichepaie.component';
 import { ListFichepaieComponent } from './list-fichepaie/list-fichepaie.component';
 import { DetailsFichepaieComponent } from './details-fichepaie/details-fichepaie.component';
+import { ErreComponent } from './erre/erre.component';
+import { FichepaieRoutingModule } from './fichepaie-routing.module';
 
 
 
@@ -12,10 +14,12 @@ import { DetailsFichepaieComponent } from './details-fichepaie/details-fichepaie
     FichepaieComponent,
     AddFichepaieComponent,
     ListFichepaieComponent,
-    DetailsFichepaieComponent
+    DetailsFichepaieComponent,
+    ErreComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FichepaieRoutingModule
   ]
 })
 export class FichepaieModule { }

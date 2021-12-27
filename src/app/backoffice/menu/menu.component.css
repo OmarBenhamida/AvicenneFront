@@ -1,0 +1,17 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    margin-top: 5%;
+    }
+
+
+    .row{
+        margin-bottom: 10%;
+    }
+    .col-sm{
+        margin-right: 5%;
+    }
+    
+
+    

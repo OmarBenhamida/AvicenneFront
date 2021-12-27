@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BackofficeComponent } from './backoffice.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
+  {
 
-
-  { path: '', redirectTo: 'medecin', pathMatch: 'full' },
-
-  // { path: 'personnel', loadChildren: './personnel/personnel.module#PersonnelModule' },
+  path: '',
+        component: BackofficeComponent,
+        children: [
+          { path: '', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'personnel', loadChildren: () => import('./personnel/personnel.module').then(m => m.PersonnelModule), },
   { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockModule), },
 
@@ -18,6 +20,7 @@ const routes: Routes = [
   { path: 'secretaire', loadChildren: () => import('./secretaire/secretaire.module').then(m => m.SecretaireModule), },
   { path: 'dashboard', loadChildren: () => import('./backoffice.module').then(m => m.BackofficeModule), },
 
+  { path: 'menu', component: MenuComponent },
 
 
   // tslint:disable-next-line:max-line-length
@@ -25,6 +28,8 @@ const routes: Routes = [
   // tslint:disable-next-line:max-line-length
   //{ path: 'utilisateur', loadChildren: () => import('./utilisateur/utilisateur.module').then(m => m.UtilisateurModule), canActivate: [MyGuard]},
 
+],
+},
 ];
 
 @NgModule({
