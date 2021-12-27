@@ -1,1 +1,35 @@
-<p>echantillon works!</p>
+
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+       <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+          <li class="active">
+           <a class="nav-link" [routerLink]="['/backoffice/laboratoire/echantillon/add']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Ajouter Echantillon</a>
+
+          </li>
+          <li>
+           <a class="nav-link" [routerLink]="['/backoffice/laboratoire/echantillon/details']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Details Echantillon</a>
+
+          </li>
+          <li>
+           <a class="nav-link" [routerLink]="['/backoffice/laboratoire/echantillon/list']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Liste  Echantillon</a>
+          </li>
+
+       </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+       <div class="container-fluid xyz">
+        <router-outlet></router-outlet>
+       </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+ </div>
+ <!-- /#wrapper -->
+ <!-- jQuery -->
+

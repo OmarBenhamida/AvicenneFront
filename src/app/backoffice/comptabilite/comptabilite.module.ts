@@ -7,10 +7,11 @@ import { ComptabiliteRoutingModule } from './comptabilite-routing.module';
 
 @NgModule({
   declarations: [
-    ComptabiliteComponent
+    ComptabiliteComponent,
   ],
   imports: [
     CommonModule,
+
     ComptabiliteRoutingModule
   ]
 })

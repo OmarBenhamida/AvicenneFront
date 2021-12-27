@@ -5,7 +5,7 @@ import { BackofficeComponent } from './backoffice.component';
 const routes: Routes = [
 
 
-  { path: '', redirectTo: 'comptabilite', pathMatch: 'full' },
+  { path: '', redirectTo: 'medecin', pathMatch: 'full' },
 
   // { path: 'personnel', loadChildren: './personnel/personnel.module#PersonnelModule' },
   { path: 'personnel', loadChildren: () => import('./personnel/personnel.module').then(m => m.PersonnelModule), },

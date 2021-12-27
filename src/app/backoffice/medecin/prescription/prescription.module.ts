@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrescriptionComponent } from './prescription/prescription.component';
 import { AddPrescriptionComponent } from './add-prescription/add-prescription.component';
 import { DetailsPrescriptionComponent } from './details-prescription/details-prescription.component';
 import { ListPrescriptionComponent } from './list-prescription/list-prescription.component';
+import { EncoursPrescriptionComponent } from './encours-prescription/encours-prescription.component';
+import { PrescriptionComponent } from './prescription.component';
+import { PrescriptionRoutingModule } from './prescription-routing.module';
 
 
 
@@ -12,10 +14,12 @@ import { ListPrescriptionComponent } from './list-prescription/list-prescription
     PrescriptionComponent,
     AddPrescriptionComponent,
     DetailsPrescriptionComponent,
-    ListPrescriptionComponent
+    ListPrescriptionComponent,
+    EncoursPrescriptionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrescriptionRoutingModule
   ]
 })
 export class PrescriptionModule { }

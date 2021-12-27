@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AddAutorisationComponent } from './add-autorisation/add-autorisation.component';
 import { ListAutorisationComponent } from './list-autorisation/list-autorisation.component';
-import { DetailsAutorisationComponent } from './details-autorisation/details-autorisation.component';
-import { AutorisationComponent } from './autorisation/autorisation.component';
+import { EncoursAutorisationComponent } from './encours-autorisation/encours-autorisation.component';
+import { AutorisationRoutingModule } from './autorisation-routing.module';
+import { AutorisationComponent } from './autorisation.component';
 
 
 
@@ -11,11 +12,11 @@ import { AutorisationComponent } from './autorisation/autorisation.component';
   declarations: [
     AddAutorisationComponent,
     ListAutorisationComponent,
-    DetailsAutorisationComponent,
-    AutorisationComponent
+    AutorisationComponent,
+    EncoursAutorisationComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+AutorisationRoutingModule  ]
 })
 export class AutorisationModule { }

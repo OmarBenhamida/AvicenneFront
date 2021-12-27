@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StockComponent } from './stock.component';
+import { StockRoutingModule } from './stock-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { StockComponent } from './stock.component';
     StockComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    StockRoutingModule
   ]
 })
 export class StockModule { }

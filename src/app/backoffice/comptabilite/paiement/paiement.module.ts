@@ -5,6 +5,7 @@ import { DetailsPaiementComponent } from './details-paiement/details-paiement.co
 import { ListPaiementComponent } from './list-paiement/list-paiement.component';
 import { PaiementComponent } from './paiement.component';
 import { PaiementRoutingModule } from './paiement-routing.module';
+import { EncoursPaiementComponent } from './encours-paiement/encours-paiement.component';
 
 
 
@@ -13,7 +14,9 @@ import { PaiementRoutingModule } from './paiement-routing.module';
     AddPaiementComponent,
     DetailsPaiementComponent,
     ListPaiementComponent,
-    PaiementComponent
+    PaiementComponent,
+    EncoursPaiementComponent,
+
   ],
   imports: [
     CommonModule,

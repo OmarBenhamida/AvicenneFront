@@ -10,6 +10,10 @@ export class ListFactureComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+
+
+
   }
 
 }

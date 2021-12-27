@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgendaComponent } from './agenda/agenda.component';
 import { MedecinComponent } from './medecin.component';
+import { MedecinRoutingModule } from './medecin-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { MedecinComponent } from './medecin.component';
     MedecinComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MedecinRoutingModule
   ]
 })
 export class MedecinModule { }

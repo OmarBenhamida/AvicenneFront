@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListDmComponent } from './list-dm/list-dm.component';
 import { ConsultDmComponent } from './consult-dm/consult-dm.component';
-import { DmComponent } from './dm/dm.component';
+import { EncoursDmComponent } from './encours-dm/encours-dm.component';
+import { DmRoutingModule } from './dm-routing.module';
+import { DmComponent } from './dm.component';
 
 
 
@@ -10,10 +12,12 @@ import { DmComponent } from './dm/dm.component';
   declarations: [
     ListDmComponent,
     ConsultDmComponent,
-    DmComponent
+    DmComponent,
+    EncoursDmComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DmRoutingModule
   ]
 })
 export class DmModule { }

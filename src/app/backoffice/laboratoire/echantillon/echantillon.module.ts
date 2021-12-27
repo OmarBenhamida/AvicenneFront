@@ -4,6 +4,8 @@ import { AddEchantillonComponent } from './add-echantillon/add-echantillon.compo
 import { EchantillonComponent } from './echantillon.component';
 import { DetailsEchantillonComponent } from './details-echantillon/details-echantillon.component';
 import { ListEchantillonComponent } from './list-echantillon/list-echantillon.component';
+import { EncoursEchantillonComponent } from './encours-echantillon/encours-echantillon.component';
+import { EchantillonRoutingModule } from './echantillon-routing.module';
 
 
 
@@ -12,10 +14,12 @@ import { ListEchantillonComponent } from './list-echantillon/list-echantillon.co
     AddEchantillonComponent,
     EchantillonComponent,
     DetailsEchantillonComponent,
-    ListEchantillonComponent
+    ListEchantillonComponent,
+    EncoursEchantillonComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    EchantillonRoutingModule
   ]
 })
 export class EchantillonModule { }

@@ -4,6 +4,8 @@ import { AnalyseComponent } from './analyse.component';
 import { AddAnalyseComponent } from './add-analyse/add-analyse.component';
 import { DetailsAnalyseComponent } from './details-analyse/details-analyse.component';
 import { ListAnalyseComponent } from './list-analyse/list-analyse.component';
+import { EncoursAnalyseComponent } from './encours-analyse/encours-analyse.component';
+import { AnalyseRoutingModule } from './analyse-routing.module';
 
 
 
@@ -12,10 +14,12 @@ import { ListAnalyseComponent } from './list-analyse/list-analyse.component';
     AnalyseComponent,
     AddAnalyseComponent,
     DetailsAnalyseComponent,
-    ListAnalyseComponent
+    ListAnalyseComponent,
+    EncoursAnalyseComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AnalyseRoutingModule
   ]
 })
 export class AnalyseModule { }

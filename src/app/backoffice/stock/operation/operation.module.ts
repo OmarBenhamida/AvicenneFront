@@ -4,6 +4,7 @@ import { EntreeComponent } from './entree/entree.component';
 import { SortieComponent } from './sortie/sortie.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { OperationComponent } from './operation.component';
+import { EncoursOperationComponent } from './encours-operation/encours-operation.component';
 
 
 
@@ -12,7 +13,8 @@ import { OperationComponent } from './operation.component';
     EntreeComponent,
     SortieComponent,
     HistoriqueComponent,
-    OperationComponent
+    OperationComponent,
+    EncoursOperationComponent
   ],
   imports: [
     CommonModule

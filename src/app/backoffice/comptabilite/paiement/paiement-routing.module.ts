@@ -13,7 +13,6 @@ const routes: Routes = [
     path: '',
     component: PaiementComponent,
     children: [
-      { path: '', redirectTo: 'accueil', pathMatch: 'full' },
       { path: 'add', component: AddPaiementComponent },
       { path: 'details', component: DetailsPaiementComponent },
       { path: 'list', component: ListPaiementComponent },
