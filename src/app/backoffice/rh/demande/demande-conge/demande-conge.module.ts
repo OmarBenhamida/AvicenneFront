@@ -4,6 +4,7 @@ import { DemandeCongeComponent } from './demande-conge.component';
 import { AdddemandeCongeComponent } from './adddemande-conge/adddemande-conge.component';
 import { ListdemandeCongeComponent } from './listdemande-conge/listdemande-conge.component';
 import { DetailsdemandeCongeComponent } from './detailsdemande-conge/detailsdemande-conge.component';
+import { DemandeCongeRoutingModule } from './demande-conge-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { DetailsdemandeCongeComponent } from './detailsdemande-conge/detailsdema
     DetailsdemandeCongeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DemandeCongeRoutingModule
   ]
 })
 export class DemandeCongeModule { }

@@ -13,12 +13,10 @@ const routes: Routes = [
     path: '',
     component: AbsenceComponent,
     children: [
-      { path: '', redirectTo: 'accueil', pathMatch: 'full' },
       { path: 'add', component: AddAbsenceComponent },
       { path: 'details', component: DetailsAbsenceComponent },
       { path: 'list', component: ListAbsenceComponent },
 
-      { path: 'accueil', component: AbsenceComponent },
 
     ],
   },

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DemandeComponent } from './demande.component';
+import { DemandeRoutingModule } from './demande-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { DemandeComponent } from './demande.component';
     DemandeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DemandeRoutingModule
   ]
 })
 export class DemandeModule { }

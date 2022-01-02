@@ -4,6 +4,7 @@ import { CongeComponent } from './conge.component';
 import { AddCongeComponent } from './add-conge/add-conge.component';
 import { DetailsCongeComponent } from './details-conge/details-conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
+import { CongeRoutingModule } from './conge-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { ListCongeComponent } from './list-conge/list-conge.component';
     ListCongeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    CongeRoutingModule
   ]
 })
 export class CongeModule { }

@@ -1,1 +1,40 @@
-<p>personel works!</p>
+
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+       <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
+          <li class="active">
+           <a class="nav-link" [routerLink]="['/backoffice/rh/personnel/add']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span> Ajouter personnel</a>
+
+          </li>
+          <li>
+           <a class="nav-link" [routerLink]="['/backoffice/rh/personnel/details']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Details personnel</a>
+
+          </li>
+          <li>
+            <a class="nav-link" [routerLink]="['/backoffice/rh/personnel/edit']" routerLinkActive="router-link-active">
+              <span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>Editer personnel</a>
+ 
+           </li>
+          <li>
+           <a class="nav-link" [routerLink]="['/backoffice/rh/personnel/list']" routerLinkActive="router-link-active">
+             <span class="fa-stack fa-lg pull-left"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Liste  personnel</a>
+          </li>
+
+       </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+       <div class="container-fluid xyz">
+        <router-outlet></router-outlet>
+       </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+ </div>
+ <!-- /#wrapper -->
+ <!-- jQuery -->
+

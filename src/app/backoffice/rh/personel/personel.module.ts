@@ -5,6 +5,7 @@ import { DetailsPersonnelComponent } from './details-personnel/details-personnel
 import { EditPersonnelComponent } from './edit-personnel/edit-personnel.component';
 import { ListPersonnelComponent } from './list-personnel/list-personnel.component';
 import { PersonelComponent } from './personel.component';
+import { PersonelRoutingModule } from './personel-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { PersonelComponent } from './personel.component';
     PersonelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PersonelRoutingModule
   ]
 })
 export class PersonelModule { }

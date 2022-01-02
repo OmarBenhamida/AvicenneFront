@@ -4,6 +4,7 @@ import { DemandeFichepaieComponent } from './demande-fichepaie.component';
 import { AdddemandeFichepaieComponent } from './adddemande-fichepaie/adddemande-fichepaie.component';
 import { ListdemandeFichepaieComponent } from './listdemande-fichepaie/listdemande-fichepaie.component';
 import { DetailsdemandeFichepaieComponent } from './detailsdemande-fichepaie/detailsdemande-fichepaie.component';
+import { DemandeFichepaieRoutingModule } from './demade-fichepaie-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { DetailsdemandeFichepaieComponent } from './detailsdemande-fichepaie/det
     DetailsdemandeFichepaieComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DemandeFichepaieRoutingModule
   ]
 })
 export class DemandeFichepaieModule { }

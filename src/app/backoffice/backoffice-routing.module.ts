@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'medecin', loadChildren: () => import('./medecin/medecin.module').then(m => m.MedecinModule), },
   { path: 'rh', loadChildren: () => import('./rh/rh.module').then(m => m.RhModule), },
   { path: 'secretaire', loadChildren: () => import('./secretaire/secretaire.module').then(m => m.SecretaireModule), },
+  { path: 'authentification', loadChildren: () => import('./authentification/authentification.module').then(m => m.AuthentificationModule), },
+
   { path: 'dashboard', loadChildren: () => import('./backoffice.module').then(m => m.BackofficeModule), },
 
   { path: 'menu', component: MenuComponent },

@@ -5,6 +5,7 @@ import { SortieComponent } from './sortie/sortie.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { OperationComponent } from './operation.component';
 import { EncoursOperationComponent } from './encours-operation/encours-operation.component';
+import { OperationRoutingModule } from './operation-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { EncoursOperationComponent } from './encours-operation/encours-operation
     EncoursOperationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OperationRoutingModule
   ]
 })
 export class OperationModule { }

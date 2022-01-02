@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AffectationComponent } from './affectation/affectation.component';
 import { PosteComponent } from './poste.component';
+import { PosteRoutingModule } from './poste-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { PosteComponent } from './poste.component';
     PosteComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PosteRoutingModule
   ]
 })
 export class PosteModule { }

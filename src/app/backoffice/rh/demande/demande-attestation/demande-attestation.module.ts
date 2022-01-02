@@ -4,6 +4,7 @@ import { DemandeAttestationComponent } from './demande-attestation.component';
 import { AdddemandeAttestationComponent } from './adddemande-attestation/adddemande-attestation.component';
 import { DetailsdemandeAttestationComponent } from './detailsdemande-attestation/detailsdemande-attestation.component';
 import { ListdemandeAttestationComponent } from './listdemande-attestation/listdemande-attestation.component';
+import { DemandeAttestationRoutingModule } from './demande-attestation-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { ListdemandeAttestationComponent } from './listdemande-attestation/listd
     ListdemandeAttestationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DemandeAttestationRoutingModule
   ]
 })
 export class DemandeAttestationModule { }
