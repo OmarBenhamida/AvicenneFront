@@ -5,6 +5,7 @@ import { AddOperationComponent } from './add-operation/add-operation.component';
 import { EditOperationComponent } from './edit-operation/edit-operation.component';
 import { ListOperationComponent } from './list-operation/list-operation.component';
 import { DetailsOperationComponent } from './details-operation/details-operation.component';
+import { OperationRoutingModule } from './operation-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { DetailsOperationComponent } from './details-operation/details-operation
     DetailsOperationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    OperationRoutingModule
   ]
 })
 export class OperationModule { }

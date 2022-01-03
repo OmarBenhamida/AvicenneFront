@@ -4,6 +4,7 @@ import { AddConsultationComponent } from './add-consultation/add-consultation.co
 import { ListConsultationComponent } from './list-consultation/list-consultation.component';
 import { DetailsConsultationComponent } from './details-consultation/details-consultation.component';
 import { ConsultationComponent } from './consultation.component';
+import { ConsultationRoutingModule } from './consultation-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { ConsultationComponent } from './consultation.component';
     ConsultationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ConsultationRoutingModule
   ]
 })
 export class ConsultationModule { }

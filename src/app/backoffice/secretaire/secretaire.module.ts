@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SecretaireComponent } from './secretaire.component';
+import { SecretaireRoutingModule } from './secretaire-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { SecretaireComponent } from './secretaire.component';
     SecretaireComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SecretaireRoutingModule
   ]
 })
 export class SecretaireModule { }

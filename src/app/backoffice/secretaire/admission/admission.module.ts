@@ -6,6 +6,7 @@ import { AddAdmissionComponent } from './add-admission/add-admission.component';
 import { AddAdmissionUrgComponent } from './add-admission-urg/add-admission-urg.component';
 import { DetaitlsAdmissionComponent } from './detaitls-admission/detaitls-admission.component';
 import { EditAdmissionComponent } from './edit-admission/edit-admission.component';
+import { AdmissionRoutingModule } from './admission-routing.module';
 
 
 
@@ -19,7 +20,8 @@ import { EditAdmissionComponent } from './edit-admission/edit-admission.componen
     EditAdmissionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AdmissionRoutingModule
   ]
 })
 export class AdmissionModule { }

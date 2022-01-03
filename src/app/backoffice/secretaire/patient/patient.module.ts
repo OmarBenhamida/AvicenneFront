@@ -5,6 +5,7 @@ import { ListPatientComponent } from './list-patient/list-patient.component';
 import { DetailsPatientComponent } from './details-patient/details-patient.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
 import { PatientComponent } from './patient.component';
+import { PatientRoutingModule } from './patient-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { PatientComponent } from './patient.component';
     PatientComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PatientRoutingModule
   ]
 })
 export class PatientModule { }

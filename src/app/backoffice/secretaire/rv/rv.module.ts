@@ -4,6 +4,7 @@ import { RvComponent } from './rv.component';
 import { ListRvComponent } from './list-rv/list-rv.component';
 import { AddRvComponent } from './add-rv/add-rv.component';
 import { DetailsRvComponent } from './details-rv/details-rv.component';
+import { RvRoutingModule } from './rv-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { DetailsRvComponent } from './details-rv/details-rv.component';
     DetailsRvComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RvRoutingModule
   ]
 })
 export class RvModule { }
