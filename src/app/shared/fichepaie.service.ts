@@ -11,7 +11,7 @@ import { Retard } from '../models/Retards.models';
 })
 export class FichePaieService {
 
-    url = 'http://localhost:8000/api';
+    url = 'http://localhost:5505/rest/fichepaie';
     o = {
         mois: 0,
         annee: 0,

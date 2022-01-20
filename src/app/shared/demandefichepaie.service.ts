@@ -8,7 +8,7 @@ import { DemandeFichepaie } from '../models/Demandefichepaies.models';
     providedIn: 'root'
 })
 export class DemandefichepaieService {
-    url = 'http://localhost:8000/api/demandefichepaies';
+    url = 'http://localhost:5505/rest/demandefichepaies';
    demandefichepaies: DemandeFichepaie[];
     demandefichepaie: DemandeFichepaie;
 

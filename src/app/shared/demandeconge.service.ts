@@ -7,7 +7,7 @@ import { DemandeConge } from '../models/Demandeconges.models';
     providedIn: 'root'
 })
 export class DemandeCongeService {
-    url = 'http://localhost:8000/api/demandeconges';
+    url = 'http://localhost:5505/rest/demandeconges';
    demandeconges: DemandeConge[];
     demandeconge: DemandeConge;
 

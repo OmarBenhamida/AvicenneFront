@@ -6,6 +6,7 @@ import { EditPersonnelComponent } from './edit-personnel/edit-personnel.componen
 import { ListPersonnelComponent } from './list-personnel/list-personnel.component';
 import { PersonelComponent } from './personel.component';
 import { PersonelRoutingModule } from './personel-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -19,6 +20,7 @@ import { PersonelRoutingModule } from './personel-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     PersonelRoutingModule
   ]
 })

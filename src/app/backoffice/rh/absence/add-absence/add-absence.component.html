@@ -1,67 +1,26 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Date Absence</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="date">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">type</label>
+      <input type="text" class="form-control" id="inputPassword4" placeholder="text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">justification</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
 
-<style>
 
+    <div class="form-group col-md-4">
+      <label for="inputState">Personnel</label>
+      <select #select *ngFor="let o of uow.personnels"  class="form-control">
+        <option value="{{o.id}}">{{o.nom}} {{o.prenom}}</option>
+      </select>
+    </div>
 
-
-    /*======================
-        404 page
-    =======================*/
-  
-  
-    .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
-    }
-  
-    .page_404  img{ width:100%;}
-  
-    .four_zero_four_bg{
-  
-     background-image: url(https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif);
-        height: 650px;
-        background-position: center;
-     }
-  
-  
-     .four_zero_four_bg h1{
-     font-size:80px;
-     }
-  
-      .four_zero_four_bg h3{
-           font-size:80px;
-           }
-  
-           .link_404{
-      color: #fff!important;
-        padding: 10px 20px;
-        background: #000f61;
-        margin: 20px 0;
-        display: inline-block;}
-      .contant_box_404{ margin-top:-50px;}
-  
-  
-  
-    </style>
-    <section class="page_404">
-      <div class="container">
-        <div class="row">
-        <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="four_zero_four_bg">
-  
-  
-  
-        </div>
-  
-        <div class="contant_box_404">
-        <h3 class="h2">
-          Module En Cours De Développement    </h3>
-  
-        <p>Merci Pour Votre Patience</p>
-  
-        <a class="link_404" [routerLink]="['/backoffice']" routerLinkActive="router-link-active">Revenir à l'accueil</a>
-      </div>
-        </div>
-        </div>
-        </div>
-      </div>
-    </section>
-  
+  <button type="submit"   class="btn btn-primary">Sign in</button>
+</form>

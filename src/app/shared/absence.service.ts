@@ -9,9 +9,10 @@ import { Personnel } from '../models/Personnels.models';
     providedIn: 'root'
 })
 export class AbsenceService {
-    url = 'http://localhost:8000/api/absences';
+    url = 'http://localhost:5505/rest/absence';
     absences: Absence[];
     absence: Absence;
+
 
     constructor(private http: HttpClient) { }
 
@@ -22,13 +23,11 @@ export class AbsenceService {
     }
 
     getall() {
-        return this.http.get(this.url + '/getAll');
+        return this.http.get(this.url );
      }
 
-    post() {
-       // delete this.absence.personnel;
-
-        return this.http.post(this.url, this.absence);
+    post(idp:string) {
+        return this.http.post(this.url+"/add/"+idp, this.absence);
     }
 
     put() {

@@ -9,7 +9,7 @@ import { Post } from '../models/Posts.models';
     providedIn: 'root'
 })
 export class PostService {
-    url = 'http://localhost:8000/api/posts';
+    url = 'http://localhost:5505/rest/post';
     posts: Post[];
     poste: Post;
 

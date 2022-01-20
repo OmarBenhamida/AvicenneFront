@@ -10,7 +10,7 @@ import { Demande } from '../models/Demandes.models';
     providedIn: 'root'
 })
 export class DemandeService {
-    url = 'http://localhost:8000/api/demandes';
+    url = 'http://localhost:5505/rest/demandes';
     demandes: Demande[];
     demande: Demande;
 

@@ -5,8 +5,8 @@ import { Personnel } from '../models/Personnels.models';
 @Injectable({
   providedIn: 'root'
 })
-export class personnelService {
-  url = 'http://localhost:8000/api/personnels';
+export class PersonnelService {
+  url = 'http://localhost:5505/rest/personnel';
   personnels: Personnel[];
   personnel: Personnel;
 

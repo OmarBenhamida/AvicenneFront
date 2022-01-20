@@ -9,7 +9,7 @@ import { Retard } from '../models/Retards.models';
     providedIn: 'root'
 })
 export class RetardService {
-    url = 'http://localhost:8000/api/retards';
+    url = 'http://localhost:5505/rest/retards';
     retards: Retard[];
     retard: Retard;
 

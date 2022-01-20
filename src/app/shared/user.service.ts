@@ -10,7 +10,7 @@ import { User } from '../models/Users.models';
     providedIn: 'root'
 })
 export class UserService {
-    url = 'http://localhost:8000/api/users';
+    url = 'http://localhost:5505/rest/users';
     users: User[];
     user: User;
 

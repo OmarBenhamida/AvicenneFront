@@ -14,6 +14,7 @@ const routes: Routes = [
     path: '',
     component: PersonelComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AddPersonnelComponent },
       { path: 'details', component: DetailsPersonnelComponent },
       { path: 'list', component: ListPersonnelComponent },

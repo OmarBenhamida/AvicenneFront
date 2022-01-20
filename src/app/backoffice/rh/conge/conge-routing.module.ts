@@ -14,6 +14,8 @@ const routes: Routes = [
     path: '',
     component: CongeComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+
       { path: 'add', component: AddCongeComponent },
       { path: 'details', component: DetailsCongeComponent },
       { path: 'list', component: ListCongeComponent },

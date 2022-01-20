@@ -4,6 +4,7 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { AffectationComponent } from './affectation/affectation.component';
 import { PosteComponent } from './poste.component';
 import { PosteRoutingModule } from './poste-routing.module';
+import { ListePostComponent } from './liste-post/liste-post.component';
 
 
 
@@ -11,7 +12,8 @@ import { PosteRoutingModule } from './poste-routing.module';
   declarations: [
     AddPostComponent,
     AffectationComponent,
-    PosteComponent
+    PosteComponent,
+    ListePostComponent
   ],
   imports: [
     CommonModule,

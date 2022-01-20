@@ -9,7 +9,7 @@ import { DemandeAttestation } from '../models/Demandeattestations.models';
     providedIn: 'root'
 })
 export class DemandeAttestationService {
-    url = 'http://localhost:8000/api/demandeAttestations';
+    url = 'http://localhost:5505/rest/demandeAttestations';
    demandeAttestations: DemandeAttestation[];
     demandeAttestation: DemandeAttestation;
 

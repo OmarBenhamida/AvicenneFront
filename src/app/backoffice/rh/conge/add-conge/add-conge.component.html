@@ -1,67 +1,54 @@
+<form>
+  <div class="mb-3">
+      <div class="dropdown d-grid gap-2"><button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"><strong>Personnel</strong></button>
+          <div class="dropdown-menu" id="consultationpatient" style="width:100%;"><input type="text" class="form-control form-control dropdown-search-input" placeholder="Search.." />
+              <a class="dropdown-item" href="#">Angular</a>
+              <a class="dropdown-item" href="#">Java</a>
+              <a class="dropdown-item" href="#">JavaScript</a>
+          </div>
+          <div class="table-responsive table mt-2" id="consultationpatienttable" role="grid" aria-describedby="dataTable_info">
+              <table class="table my-0" id="dataTable">
+                  <thead>
+                      <tr>
+                          <th>Nom</th>
+                          <th>Prenom</th>
+                          <th>Cin</th>
 
-<style>
-
-
-
-    /*======================
-        404 page
-    =======================*/
-  
-  
-    .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
-    }
-  
-    .page_404  img{ width:100%;}
-  
-    .four_zero_four_bg{
-  
-     background-image: url(https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif);
-        height: 650px;
-        background-position: center;
-     }
-  
-  
-     .four_zero_four_bg h1{
-     font-size:80px;
-     }
-  
-      .four_zero_four_bg h3{
-           font-size:80px;
-           }
-  
-           .link_404{
-      color: #fff!important;
-        padding: 10px 20px;
-        background: #000f61;
-        margin: 20px 0;
-        display: inline-block;}
-      .contant_box_404{ margin-top:-50px;}
-  
-  
-  
-    </style>
-    <section class="page_404">
-      <div class="container">
-        <div class="row">
-        <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="four_zero_four_bg">
-  
-  
-  
-        </div>
-  
-        <div class="contant_box_404">
-        <h3 class="h2">
-          Module En Cours De Développement    </h3>
-  
-        <p>Merci Pour Votre Patience</p>
-  
-        <a class="link_404" [routerLink]="['/backoffice']" routerLinkActive="router-link-active">Revenir à l'accueil</a>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+                  <tfoot>
+                      <tr></tr>
+                  </tfoot>
+              </table>
+          </div>
       </div>
-        </div>
-        </div>
-        </div>
+  </div>
+  <div class="row">
+      <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label" ><strong>Date De début :</strong></label><input class="form-control" type="date" /></div>
       </div>
-    </section>
-  
+      <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin :</strong></label><input class="form-control" type="date" /></div>
+      </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col">
+          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Motif :</strong></label><input type="text" class="form-control" id="motif" placeholder="Mariage..." name="email" /></div>
+      </div>
+      <div class="col">
+          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Etat de congé :</strong></label>
+              <select class="form-select" aria-label="Default select example">
+                  <option selected>Selectionner</option>
+                  <option value="1">Validé</option>
+                  <option value="2">En cours d'examen</option>
+                  <option value="3">Refusé</option>
+                </select>
+          </div>
+      </div>
+  </div>
+
+
+
+</form>

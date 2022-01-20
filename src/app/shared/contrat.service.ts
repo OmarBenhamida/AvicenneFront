@@ -8,7 +8,7 @@ import { Personnel } from '../models/Personnels.models';
   providedIn: 'root'
 })
 export class ContratService {
-  url = 'http://localhost:8000/api/contrats';
+  url = 'http://localhost:5505/rest/contrats';
   contrats: Contrat[];
   contrat: Contrat;
   user: Personnel;

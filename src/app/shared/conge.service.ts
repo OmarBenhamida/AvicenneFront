@@ -6,7 +6,7 @@ import { Conge } from "../models/Conges.models";
     providedIn: 'root'
 })
 export class CongeService {
-    url = 'http://localhost:8000/api/conges';
+    url = 'http://localhost:5505/rest/conge';
     conges: Conge[];
     conge: Conge;
 

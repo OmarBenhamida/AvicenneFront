@@ -15,6 +15,7 @@ const routes: Routes = [
     path: '',
     component: RetardComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AddRetardComponent },
       { path: 'details', component: DetailsRetardComponent },
       { path: 'list', component: ListRetardComponent },

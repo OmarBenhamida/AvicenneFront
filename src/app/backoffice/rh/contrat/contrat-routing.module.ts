@@ -14,6 +14,7 @@ const routes: Routes = [
     path: '',
     component: ContratComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AddContratComponent },
       { path: 'details', component: DetailsContratComponent },
       { path: 'list', component: ListContratComponent },
