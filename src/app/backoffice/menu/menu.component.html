@@ -1,118 +1,212 @@
+<main class="site-wrapper">
+  <div class="pt-table desktop-768">
+      <div class="pt-tablecell page-home relative" style="background-image: url(https://wallpaperaccess.com/full/1282794.jpg);
+        background-position: center;
+        background-size: cover;">
+          <div class="overlay"></div>
 
- 
-    <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <div class="card text-white bg-primary mb-3" style="max-width: 25rem;">
-                <div class="card-header">1</div>
-                <div class="card-body">
-                  <h5 class="card-title">Front Office</h5>
-                  <p class="card-text">Espace Visiteur</p>
-                </div>
-              </div>
-          </div>
-          <div class="col-sm">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
-                <div class="card-header">2</div>
-                <div class="card-body">
-                    <h5 class="card-title">Comptabilité et finance </h5>
-                    <button class="btn btn-primary"  (click)="go_to_comptabilite()">Module Comptabilite</button>
-                </div>
-              </div>
-          </div>
-          <div class="col-sm">
-            <div class="card text-white bg-success mb-3" style="max-width: 25rem;">
-                <div class="card-header">3</div>
-                <div class="card-body">
-                    <h5 class="card-title">Personnel Medical</h5>
-                    <button class="btn btn-primary"  (click)="go_to_personnel()">Module Personnel</button>
-                </div>
-              </div>
-          </div>
-        </div>
-    
-    
-        <div class="row">
-            <div class="col-sm">
-                <div class="card text-white bg-info mb-3" style="max-width: 25rem;">
-                    <div class="card-header">4</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Authentification Medical</h5>
-                        <button class="btn btn-primary"  (click)="go_to_authentification()">Module Authentification</button>
-                    </div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                      <div class="page-title  home text-center">
+                          <span class="heading-page"> Welcome to Avicenne
+                          </span>
+                      </div>
+
+                      <div style="margin-left: 70px;">
+
+                          <div class="hexagon-menu clear">
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/rh']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-universal-access"></i>
+                                          </span>
+                                          <span class="title">RH</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/comptabilite']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-bullseye"></i>
+                                          </span>
+                                          <span class="title">Comptabilité</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/stock']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-braille"></i>
+                                          </span>
+                                          <span class="title">Stock</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/laboratoire']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-id-badge"></i>
+                                          </span>
+                                          <span class="title">Laboratoire</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/secretaire']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-life-ring"></i>
+                                          </span>
+                                          <span class="title">Secrétariat</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/medecin']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-clipboard"></i>
+                                          </span>
+                                          <span class="title">Medicale</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+                              <div class="hexagon-item">
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <div class="hex-item">
+                                      <div></div>
+                                      <div></div>
+                                      <div></div>
+                                  </div>
+                                  <a class="hex-content" [routerLink]="['/backoffice/personnel']">
+                                      <span class="hex-content-inner">
+                                          <span class="icon">
+                                              <i class="fa fa-map-signs"></i>
+                                          </span>
+                                          <span class="title">Personnel</span>
+                                      </span>
+                                      <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                              d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#3a8f99"></path>
+                                      </svg>
+                                  </a>
+                              </div>
+
+
+                          </div>
+
+                      </div>
+
                   </div>
-            </div>
-            <div class="col-sm">
-             
-      <div class="card text-white bg-warning mb-3" style="max-width: 25rem;">
-        <div style="color: black;" class="card-header">5</div>
-        <div class="card-body">
-            <h5 style="color: black;" class="card-title">Medecine Medical</h5>
-            <button class="btn btn-primary"  (click)="go_to_medecin()">Module Medecin</button>
-        </div>
+              </div>
+          </div>
       </div>
-            </div>
-            <div class="col-sm">
-                <div class="card text-white bg-danger mb-3" style="max-width: 25rem;">
-                    <div class="card-header">6</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Ressource Humaine</h5>
-                        <button class="btn btn-primary"  (click)="go_to_rh()">Module RH</button>
-                    </div>
-                  </div>
-            </div>
-          </div>
-    
-    
-          <div class="row">
-            <div class="col-sm">
-                <div class="card text-white bg-success mb-3" style="max-width: 25rem;">
-                    <div class="card-header">7</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Stock Medical</h5>
-                        <button class="btn btn-primary"  (click)="go_to_stock()">Module Stock</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-sm">
-             
-                <div class="card text-white bg-dark mb-3" style="max-width: 25rem;">
-                    <div class="card-header">8</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Secretaire Medical</h5>
-                        <button class="btn btn-primary"  (click)="go_to_secretaire()">Module Secretaire</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-sm">
-                <div class="card bg-light mb-3" style="max-width: 25rem;">
-                    <div class="card-header">9</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Laboratoire Medical</h5>
-                      <button class="btn btn-primary"  (click)="go_to_laboratoire()">Module Laboratoire</button>
-                    </div>
-                  </div>
-            </div>
-          </div>
-    
-      </div>
-      
- 
-            
-
-
- 
-        
-
-
-
-
-
-
-
-
-
-
-  
-
- 
+  </div>
+</main>

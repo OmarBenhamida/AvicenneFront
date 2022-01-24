@@ -1,41 +1,58 @@
-<form>
-  <div class="row">
-    <div class="col">
-    <label for="inputState"><strong>Personnel</strong></label>
-    <br>
-    <select *ngFor="let o of uow.personnels" id="inputState" class="form-control">
-      <option selected>Choose...</option>
-      <option>{{o.nom}} {{o.prenom}}</option>
-    </select>
-  </div>
-  </div>
-  <div class="row">
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label" ><strong>Date De début :</strong></label><input class="form-control" type="date" /></div>
-      </div>
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin :</strong></label><input class="form-control" type="date" /></div>
-      </div>
-  </div>
-  <br>
-  <div class="row">
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Motif :</strong></label><input type="text" class="form-control" id="motif" placeholder="Mariage..." name="email" /></div>
-      </div>
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Etat de congé :</strong></label>
-              <select class="form-select" aria-label="Default select example">
-                  <option selected>Selectionner</option>
-                  <option value="1">Validé</option>
-                  <option value="2">En cours d'examen</option>
-                  <option value="3">Refusé</option>
-                </select>
+<div class="card">
+    <div class="card-header">
+      Ajouter un  congé
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="row">
+              <div class="col">
+              <label for="inputState"><strong>Personnel : </strong></label>
+              <br>
+              <select *ngFor="let o of uow.personnels" id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>{{o.nom}} {{o.prenom}}</option>
+              </select>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="col-12" style="text-align: left;"><label class="form-label" ><strong>Date De début :</strong></label><input class="form-control" type="date" /></div>
+                </div>
+                <div class="col">
+                    <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin :</strong></label><input class="form-control" type="date" /></div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Motif :</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selectionner</option>
+                            <option value="1">Mariage</option>
+                            <option value="2">Maladie</option>
+                            <option value="3">Annuel</option>
+                            <option value="3">Décés</option>
+                            <option value="3">congé payé</option>
+                          </select>
+                </div>
+                <div class="col">
+                    <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Etat de congé :</strong></label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Selectionner</option>
+                            <option value="1">Validé</option>
+                            <option value="2">En cours d'examen</option>
+                            <option value="3">Refusé</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
           </div>
-      </div>
+            <br>
+          
+                <button type="submit"   class="btn btn-primary">Ajouter</button>
+          
+          </form>
+          
+    </div>
   </div>
 
-  <br>
-
-      <button type="submit"   class="btn btn-primary">Ajouter</button>
-
-</form>
