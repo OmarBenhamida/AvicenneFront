@@ -1,26 +1,42 @@
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Date Absence</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="date">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">type</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="text">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">justification</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
+
+<div class="card">
+  <div class="card-body">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Date Absence</label>
+          <br>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="Date de l'absence">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Type Absence</label>
+          <br>
+          <select  id="inputState" class="form-control">
+            <option value="true">Justifié</option>
+            <option value="false">Non-justifié</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputAddress">justification</label>
+        <br>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Certificat médical.......">
+      </div>
 
 
-    <div class="form-group col-md-4">
-      <label for="inputState">Personnel</label>
-      <select #select *ngFor="let o of uow.personnels"  class="form-control">
-        <option value="{{o.id}}">{{o.nom}} {{o.prenom}}</option>
-      </select>
-    </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Personnel</label>
+        <br>
+        <select *ngFor="let o of uow.personnels" id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>{{o.nom}} {{o.prenom}}</option>
+        </select>
+      </div>
 
-  <button type="submit"   class="btn btn-primary">Sign in</button>
-</form>
+      <br>
+
+      <button type="submit"   class="btn btn-primary">Ajouter</button>
+    </form>
+      </div>
+</div>

@@ -45,84 +45,13 @@
               <tbody>
                   <tr *ngFor="let d of service.conges">
                       <td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
-                      <td>{{d.personnel.Matricule}</td>
+                      <td>{{d.personnel.marticule}}</td>
                           <td>{{d.dateDebut}}</td>
                           <td>{{d.dateFin}}</td>
                           <td>{{d.motif}}</td>
                           <td>{{d.etat}}</td>
                       <td>
-                       <button class="btn text-warning" style="margin-left: 5px;" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop-2"><i class="fas fa-user-edit" style="font-size: 15px;"></i></button>
-                       <div id="staticBackdrop-2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                          <div id="modaldialog-1" class="modal-dialog">
-                              <div id="modalcontent-1" class="modal-content">
-                                  <div id="modalheader-1" class="modal-header">
-                                      <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Modifier un congé</strong></h1><button class="btn btn-primary btn-close" type="button" data-bs-dismiss="modal"></button>
-                                  </div>
-                                  <div id="modalbody-1" class="modal-body">
-                                      <div class="card shadow">
-                                          <div class="card-body">
-                                              <form>
-                                                  <div class="mb-3">
-                                                      <div class="dropdown d-grid gap-2"><button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"><strong>Personnel</strong></button>
-                                                          <div class="dropdown-menu" id="consultationpatient" style="width:100%;"><input type="text" class="form-control form-control dropdown-search-input" placeholder="Search.." />
-                                                              <a class="dropdown-item" href="#">Angular</a>
-                                                              <a class="dropdown-item" href="#">Java</a>
-                                                              <a class="dropdown-item" href="#">JavaScript</a>
-                                                          </div>
-                                                          <div class="table-responsive table mt-2" id="consultationpatienttable" role="grid" aria-describedby="dataTable_info">
-                                                              <table class="table my-0" id="dataTable">
-                                                                  <thead>
-                                                                      <tr>
-                                                                          <th>Nom</th>
-                                                                          <th>Prenom</th>
-                                                                          <th>Cin</th>
-
-                                                                      </tr>
-                                                                  </thead>
-                                                                  <tbody></tbody>
-                                                                  <tfoot>
-                                                                      <tr></tr>
-                                                                  </tfoot>
-                                                              </table>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-
-                                                  <div class="row">
-                                                      <div class="col">
-                                                          <div class="col-12" style="text-align: left;"><label class="form-label" ><strong>Date De début :</strong></label><input class="form-control" type="date" /></div>
-                                                      </div>
-                                                      <div class="col">
-                                                          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin :</strong></label><input class="form-control" type="date" /></div>
-                                                      </div>
-                                                  </div>
-                                                  <br>
-                                                  <div class="row">
-                                                      <div class="col">
-                                                          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Motif :</strong></label><input type="text" class="form-control" id="motif" placeholder="Mariage..." name="email" /></div>
-                                                      </div>
-                                                      <div class="col">
-                                                          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Etat de congé :</strong></label>
-                                                              <select class="form-select" aria-label="Default select example" >
-                                                                  <option selected>Selectionner</option>
-                                                                  <option value="1">Validé</option>
-                                                                  <option value="2">En cours d'examen</option>
-                                                                  <option value="3">Refusé</option>
-                                                                </select>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-
-
-
-                                              </form>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div id="modal-footer-1" class="modal-footer"><button class="btn btn-primary btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button">Enregistrer</button></div>
-                              </div>
-                          </div>
-                      </div>
+                    *
 
 
                       </td>

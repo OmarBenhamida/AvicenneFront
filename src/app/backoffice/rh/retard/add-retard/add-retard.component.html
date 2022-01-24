@@ -1,54 +1,144 @@
-<form>
-  <div class="mb-3">
-      <div class="dropdown d-grid gap-2"><button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Personnel</button>
-          <div class="dropdown-menu" id="consultationpatient" style="width:100%;"><input type="text" class="form-control form-control dropdown-search-input" placeholder="Search.." />
-              <a class="dropdown-item" href="#">Angular</a>
-              <a class="dropdown-item" href="#">Java</a>
-              <a class="dropdown-item" href="#">JavaScript</a>
-          </div>
-          <div class="table-responsive table mt-2" id="consultationpatienttable" role="grid" aria-describedby="dataTable_info">
-              <table class="table my-0" id="dataTable">
-                  <thead>
-                      <tr>
-                          <th>Nom</th>
-                          <th>Prenom</th>
-                          <th>Cin</th>
-
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-                  <tfoot>
-                      <tr></tr>
-                  </tfoot>
-              </table>
-          </div>
-      </div>
-  </div>
+<div style="font-weight: bold" class="bg-img">
   <div class="row">
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date Retard</strong> </label><input class="form-control" type="date" /></div>
-      </div>
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Justificatif :</strong></label><input type="text" class="form-control" id="email" placeholder="certificat ...." name="email" /></div>
-      </div>
+    <div class="col-12">
+      <br /><br /><br />
 
-  </div>
-  <div class="row">
+      <form ngForm="form" class="text-left">
+        <div class="row">
+          <div class="col-6">
+            <p class="h4 mb-4 text-center">Gestion des Retards</p>
+            <div class="col">
+              <input
+                hidden
+                type="text"
+                [(ngModel)]="service.retard.id"
+                name="id"
+                class="form-control"
+                placeholder="Id"
+              />
+            </div>
 
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Nombre heure :</strong></label><input type="text" class="form-control" id="email" placeholder="1 2.3..." name="email" /></div>
-      </div>
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Type Retard :</strong></label>
-              <select class="form-select" aria-label="Default select example">
-                  <option selected>Selectionner</option>
-                  <option value="1">Justifié</option>
-                  <option value="2">Non-justifié</option>
+            <div class="form-row mb-4">
+              <div class="col">
+                <label>Type Retard :</label>
+                <select
+                  class="form-control"
+                  [(ngModel)]="service.retard.type"
+                  name="type"
+                >
+                  <option selected>Type Absence</option>
+                  <option value="true">Justifié</option>
+                  <option value="false">Non Justifié</option>
                 </select>
+              </div>
+
+              <div class="col">
+                <label><b>Date Retard </b></label>
+                <input
+                  type="text"
+                  [(ngModel)]="service.retard.dateRetard"
+                  name="dateRetard"
+                  class="form-control"
+                  [value]="dateRetard"
+                />
+              </div>
+            </div>
+
+            <div class="form-row mb-4">
+              <div class="col">
+                <label>Justification :</label>
+                <input
+                  type="text"
+                  [(ngModel)]="service.retard.justification"
+                  name="justification"
+                  class="form-control"
+                  [value]="justification"
+                  placeholder="justification"
+                />
+              </div>
+              <div class="col">
+                <!-- First name -->
+
+                <div class="form-group col-md-12">
+                  <label>Employé En Retard :</label>
+                  <br />
+                  <select
+                    class="form-control"
+                    [(ngModel)]="service.retard.id_personnel"
+                    name="id_personnel"
+                  >
+                    <option selected>Choose...</option>
+                    <option
+                      *ngFor="let items of uow.personnels"
+                      [value]="+items.id"
+                    >
+                      {{ items.nom }} {{ items.prenom }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-row mb-4">
+              <div class="col">
+                <label>Nombre d'heure :</label>
+                <input
+                  type="number"
+                  [(ngModel)]="service.retard.nbrHeure"
+                  name="nb_heure"
+                  class="form-control"
+                  [value]="nbrHeure"
+                  placeholder="Nombre D'heure"
+                />
+              </div>
+            </div>
+
+            <div class="form-row mb-4">
+              <div class="col">
+                <button
+                  class="btn btn-success"
+                  block="true"
+                  (click)="submit()"
+                  type="submit"
+                >
+                  <i class="far fa-plus-square"></i> Ajouter
+                </button>
+              </div>
+            </div>
           </div>
-      </div>
+        </div>
+      </form>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <br />
+      <br />
 
+      <label>Liste Retards : </label>
 
+      <table class="tftable" border="1">
+        <tr>
+          <th class="table-active" scope="col">ID</th>
+          <th class="table-active" scope="col">Date Retard</th>
+          <th class="table-active" scope="col">Type</th>
+          <th class="table-active" scope="col">Nombre d'heure</th>
+          <th class="table-active" scope="col">Justification</th>
+          <!-- <th class="table-active" scope="col">Employe</th> -->
+        </tr>
 
-</form>
+        <tr class="table-striped" *ngFor="let item of t">
+          <td>{{ item.id }}</td>
+          <td>{{ item.dateRetard }}</td>
+          <td>{{ item.type }}</td>
+          <td>{{ item.nbrHeure }}</td>
+          <td>{{ item.justification }}</td>
+          <!-- <td>{{ item.personnel?.nom }} {{ item.personnel?.prenom }}</td> -->
+
+          <!-- <td>{{item.nbrEnfant}}</td> -->
+        </tr>
+      </table>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>

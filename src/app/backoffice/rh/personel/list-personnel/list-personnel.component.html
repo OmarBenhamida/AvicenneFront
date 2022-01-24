@@ -28,21 +28,22 @@
               <table class="table my-0" id="dataTable">
                   <thead>
                       <tr>
-                          <th>Nom</th>
-                          <th>Tel</th>
+                          <th>Nom et prénom</th>
+                          <th>matricule</th>
                           <th>CIN</th>
-                          <th>Age</th>
-                          <th>No.Patient</th>
+                          <th>Adresse</th>
+                          <th>Tel</th>
                           <th>Actions</th>
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td><img class="rounded-circle me-2" width="30" height="30" src="avatars/Me3.jpeg" />Fathi Youssef</td>
-                          <td>066176454</td>
-                          <td>AA7895</td>
-                          <td>33</td>
-                          <td>J45656454</td>
+                      <tr *ngFor="let o of service.personnels">
+                          <td>{{o.nom}} {{o.prenom}}</td>
+                          <td>{{o.marticule}}</td>
+                          <td>{{o.cin}}</td>
+                          <td>{{o.adresse}}</td>
+                          <td>{{o.tel}}</td>
+
                           <td> <button class="btn text-info" style="margin-left: 5px;" type="submit"><a href="ManageDetailsPersonnel.html"><i class="fa fa-eye" style="font-size: 15px;"></i></a></button><button class="btn text-warning" style="margin-left: 5px;" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop-1"><i class="fas fa-user-edit" style="font-size: 15px;"></i></button>
                               <div id="staticBackdrop-1" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
                                   <div id="modaldialog-1" class="modal-dialog">

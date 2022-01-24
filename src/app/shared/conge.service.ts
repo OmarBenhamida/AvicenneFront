@@ -19,15 +19,13 @@ export class CongeService {
     }
 
     getall() {
-       return this.http.get(this.url + '/getAll');
+       return this.http.get(this.url);
     }
 
     post() {
-      //  delete this.conge.personnel;
+      return this.http.post(this.url, this.conge);
+  }
 
-        console.log(this.conge)
-        return this.http.post(this.url, this.conge);
-    }
 
     put() {
        // delete this.conge.personnel;

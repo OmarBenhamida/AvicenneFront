@@ -1,28 +1,13 @@
 <form>
-  <div class="mb-3">
-      <div class="dropdown d-grid gap-2"><button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"><strong>Personnel</strong></button>
-          <div class="dropdown-menu" id="consultationpatient" style="width:100%;"><input type="text" class="form-control form-control dropdown-search-input" placeholder="Search.." />
-              <a class="dropdown-item" href="#">Angular</a>
-              <a class="dropdown-item" href="#">Java</a>
-              <a class="dropdown-item" href="#">JavaScript</a>
-          </div>
-          <div class="table-responsive table mt-2" id="consultationpatienttable" role="grid" aria-describedby="dataTable_info">
-              <table class="table my-0" id="dataTable">
-                  <thead>
-                      <tr>
-                          <th>Nom</th>
-                          <th>Prenom</th>
-                          <th>Cin</th>
-
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-                  <tfoot>
-                      <tr></tr>
-                  </tfoot>
-              </table>
-          </div>
-      </div>
+  <div class="row">
+    <div class="col">
+    <label for="inputState"><strong>Personnel</strong></label>
+    <br>
+    <select *ngFor="let o of uow.personnels" id="inputState" class="form-control">
+      <option selected>Choose...</option>
+      <option>{{o.nom}} {{o.prenom}}</option>
+    </select>
+  </div>
   </div>
   <div class="row">
       <div class="col">
@@ -49,6 +34,8 @@
       </div>
   </div>
 
+  <br>
 
+      <button type="submit"   class="btn btn-primary">Ajouter</button>
 
 </form>

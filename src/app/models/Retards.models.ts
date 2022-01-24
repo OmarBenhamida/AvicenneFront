@@ -2,11 +2,11 @@ import { Personnel } from "./Personnels.models";
 
 export class Retard {
 
-    id: number;
-    dateRetard: string;
-    type: boolean;
-    justification: string;
+    id = null;
+    dateRetard : string;
+    type : boolean
+    justification : string;
     nbrHeure : number;
-    idpersonnel: number;
+    id_personnel: number;
     personnel: Personnel;
 }

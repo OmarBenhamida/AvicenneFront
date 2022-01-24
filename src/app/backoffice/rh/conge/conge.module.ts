@@ -5,6 +5,7 @@ import { AddCongeComponent } from './add-conge/add-conge.component';
 import { DetailsCongeComponent } from './details-conge/details-conge.component';
 import { ListCongeComponent } from './list-conge/list-conge.component';
 import { CongeRoutingModule } from './conge-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -17,6 +18,8 @@ import { CongeRoutingModule } from './conge-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+
     CongeRoutingModule
   ]
 })

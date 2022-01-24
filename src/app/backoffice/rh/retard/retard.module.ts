@@ -5,6 +5,8 @@ import { AddRetardComponent } from './add-retard/add-retard.component';
 import { DetailsRetardComponent } from './details-retard/details-retard.component';
 import { ListRetardComponent } from './list-retard/list-retard.component';
 import { RetardRoutingModule } from './retard-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +19,8 @@ import { RetardRoutingModule } from './retard-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    FormsModule,
     RetardRoutingModule
   ]
 })

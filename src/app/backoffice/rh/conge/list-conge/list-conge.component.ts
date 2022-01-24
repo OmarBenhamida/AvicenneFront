@@ -60,7 +60,7 @@ export class ListCongeComponent implements OnInit {
 
 
 
-  submit() {
+  submit(ipd :string) {
     console.log();
     this.service.post().subscribe(res => {
       this.getall();
