@@ -1,81 +1,81 @@
 
 <table  class="table table-striped">
-	<tbody *ngFor="let d of service.conges">
+	<tbody >
 		<tr>
       <th  scope="col">Id</th>
-      <td>{{d.id}}</td>
+      <td>{{o.id}}</td>
 		</tr>
 		<tr>
       <th  scope="col">Date début</th>
-      <td>{{d.dateDebut}}</td>
+      <td>{{o.dateDebut}}</td>
 		</tr>
 		<tr>
       <th  scope="col">Date fin</th>
-      <td>{{d.dateFin}}</td>
+      <td>{{o.dateFin}}</td>
 		</tr>
 		<tr>
       <th  scope="col">Motif</th>
-      <td>{{d.motif}}</td>
+      <td>{{o.motif}}</td>
 		</tr>
 		<tr>
       <th  scope="col">Etat</th>
-      <td>{{d.etat}}</td>
+      <td>{{o.etat}}</td>
 		</tr>
 		<tr>
 			<td>Nom et Prenom </td>
-			<td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
+			<td>{{o.personnel.nom}} {{o.personnel.prenom}}</td>
 		</tr>
 		<tr>
       <td>Cin</td>
-			<td>{{d.personnel.cin}}</td>
+			<td>{{o.personnel.cin}}</td>
 		</tr>
     <tr>
 			<td>Matricule</td>
-			<td>{{d.personnel.marticule}}</td>
+			<td>{{o.personnel.marticule}}</td>
 		</tr>
 		<tr>
 		  <td>Adresse</td>
-			<td>{{d.personnel.adresse}}</td>
+			<td>{{o.personnel.adresse}}</td>
 		</tr>
 		<tr>
 		  <td>Tel</td>
-			<td>{{d.personnel.tel}}</td>
+			<td>{{o.personnel.tel}}</td>
 		</tr>
 		<tr>
       <td>Email</td>
-			<td>{{d.personnel.email}}</td>
+			<td>{{o.personnel.email}}</td>
 		</tr>
 		<tr>
 		  <td>Situation Familiale</td>
-			<td>{{d.personnel.situationFamiliale}}</td>
+			<td>{{o.personnel.situationFamiliale}}</td>
 		</tr>
 		<tr>
       <td>Sécurité Sociale</td>
-			<td>{{d.personnel.securiteSocial}}</td>
+			<td>{{o.personnel.securiteSocial}}</td>
 		</tr>
 		<tr>
 		  <td>Sexe</td>
-			<td>{{d.personnel.sexe}}</td>
+			<td>{{o.personnel.sexe}}</td>
 		</tr>
 		<tr>
       <td>Date Naissance</td>
-			<td>{{d.personnel.dateNaissance}}</td>
+			<td>{{o.personnel.dateNaissance}}</td>
 		</tr>
 		<tr>
       <td>Lieu Naissance</td>
-			<td>{{d.personnel.lieuNaissance}}</td>
+			<td>{{o.personnel.lieuNaissance}}</td>
 		</tr>
 		<tr>
       <td>Date Embauche</td>
-			<td>{{d.personnel.dateEmbauche}}</td>
+			<td>{{o.personnel.dateEmbauche}}</td>
 		</tr>
 		<tr>
       <td>Intitulé du diplome</td>
-			<td>{{d.personnel.intituleDiplome}}</td>
+			<td>{{o.personnel.intituleDiplome}}</td>
 		</tr>
 		<tr>
       <td>Nombre d'enfant Naissance</td>
-			<td>{{d.personnel.nbrEnfant}}</td>
+			<td>{{o.personnel.nbrEnfant}}</td>
 		</tr>
 	
 	</tbody>

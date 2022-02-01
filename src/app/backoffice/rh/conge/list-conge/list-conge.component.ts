@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Conge } from 'src/app/models/Conges.models';
 import { Personnel } from 'src/app/models/Personnels.models';
 import { CongeService } from 'src/app/shared/conge.service';
@@ -7,7 +8,9 @@ import { PersonnelService } from 'src/app/shared/personnel.service';
 @Component({
   selector: 'app-list-conge',
   templateUrl: './list-conge.component.html',
-  styleUrls: ['./list-conge.component.css']
+  styleUrls: ['./list-conge.component.css','../../../assets/fonts/fontawesome-all.min.css',
+  '../../../assets/fonts/font-awesome.min.css',
+  '../../../assets/fonts/fontawesome5-overrides.min.css',]
 })
 export class ListCongeComponent implements OnInit {
 
@@ -15,27 +18,28 @@ export class ListCongeComponent implements OnInit {
   dateDebut: string;
   dateFin: string;
   motif: string;
-  etat: string;
+  etat : number;
   idpersonnel: number;
   personnel : Personnel;
   t: Conge[] = [];
+  congeModifie : Conge = Object();
 
-  constructor(public service: CongeService, public uow: PersonnelService) { }
+ // personnel = this.uow.get(this.id);
+
+  constructor(public service: CongeService, public uow: PersonnelService,private router : Router) { }
 
   ngOnInit(): void {
 
-    // this.service.absence = {
+    this.service.conge = {
+      id: 0,
+      dateDebut: "null",
+      dateFin: "null",
+      motif: "null",
+      etat: "null",
+      idpersonnel: 0,
+      personnel: new Personnel
 
-    //   id: 0,
-    //   dateAbsence: "",
-    //   type: false,
-    //   justification: "",
-    //   idpersonnel: 0,
-    //   personnel : Object
-
-    // },
-
-
+    },
 
     this.getall();
     this.uow.getall();
@@ -60,7 +64,7 @@ export class ListCongeComponent implements OnInit {
 
 
 
-  submit(ipd :string) {
+  submit() {
     console.log();
     this.service.post().subscribe(res => {
       this.getall();
@@ -76,7 +80,6 @@ export class ListCongeComponent implements OnInit {
   modifier() {
 
     this.service.put().subscribe(res => {
-      this.getall();
     },
       err => {
         console.log(err);
@@ -88,7 +91,7 @@ export class ListCongeComponent implements OnInit {
 
     this.service.delete().subscribe(res => {
       this.getall();
-    },
+      this.uow.getall();    },
       err => {
         console.log(err);
       }
@@ -112,20 +115,23 @@ export class ListCongeComponent implements OnInit {
     this.t = this.service.conges.filter(e => +e.idpersonnel === +this.service.conge.idpersonnel);
 
   }
-  // RechercheParDate() {
 
-  //   if (this.service.conge.dateconge === null) {
+  imprimer() {
 
-  //     this.t = this.service.conges;
+    this.router.navigate(['/backoffice/rh/conge/details', +this.service.conge.id]);
 
-  //   } else {
-  //     this.t = this.service.conges.filter(e => e.dateconge === this.service.conge.dateconge);
 
-  //   }
-  // }
+  }
+
+  details() {
+
+    this.router.navigate(['/backoffice/rh/conge/details', +this.service.conge.id]);
+
+
+  }
+
 
 
 
 }
-
 

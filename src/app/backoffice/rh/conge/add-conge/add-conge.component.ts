@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Conge } from 'src/app/models/Conges.models';
+import { Personnel } from 'src/app/models/Personnels.models';
 import { CongeService } from 'src/app/shared/conge.service';
 import { PersonnelService } from 'src/app/shared/personnel.service';
 
@@ -13,28 +15,28 @@ export class AddCongeComponent implements OnInit {
   id: number;
   dateDebut: string;
   dateFin: string;
-  motif: string
-  etat : number
+  motif: string;
+  etat : number;
+  idpersonnel: number;
+  personnel : Personnel;
   t: Conge[] = [];
 
  // personnel = this.uow.get(this.id);
 
-  constructor(public service: CongeService, public uow: PersonnelService) { }
+  constructor(public service: CongeService, public uow: PersonnelService,private router: Router) { }
 
   ngOnInit(): void {
 
-    // this.service.absence = {
+    this.service.conge = {
+      id: 0,
+      dateDebut: "null",
+      dateFin: "null",
+      motif: "null",
+      etat: "null",
+      idpersonnel: 0,
+      personnel: new Personnel
 
-    //   id: 0,
-    //   dateAbsence: "",
-    //   type: false,
-    //   justification: "",
-    //   idpersonnel: 0,
-    //   personnel : Object
-
-    // },
-
-
+    },
 
     this.getall();
     this.uow.getall();
@@ -60,15 +62,18 @@ export class AddCongeComponent implements OnInit {
 
 
   submit() {
-    console.log();
+   
     this.service.post().subscribe(res => {
-      this.getall();
+      
+
       console.log(res);
     },
       err => {
         console.log(err);
       }
     );
+
+    
   }
 
 

@@ -27,30 +27,128 @@
             <br><br>
         <table class="tftable" border="1">
           <tr>
-            <th class="table-active" scope="col">Nom et prenom</th>
-            <th class="table-active" scope="col">Matricule</th>
-            <th class="table-active" scope="col">Date début</th>
-            <th class="table-active" scope="col">Date fin</th>
-            <th class="table-active" scope="col">Motif</th>
-            <th class="table-active" scope="col">Etat</th>
-            <th class="table-active" scope="col">Actions</th>
+            <th class="table-active" style="color: white;" scope="col">Numéro de congé</th> 
+            <th class="table-active" style="color: white;" scope="col">Nom et prenom</th> 
+            <th class="table-active" style="color: white;" scope="col">Matricule</th>
+            <th class="table-active" style="color: white;" scope="col">Date début</th>
+            <th class="table-active" style="color: white;" scope="col">Date fin</th>
+            <th class="table-active" style="color: white;" scope="col">Motif</th>
+            <th class="table-active" style="color: white;" scope="col">Etat</th>
+            <th class="table-active" style="color: white;" scope="col">Actions</th>
 
             <!-- <th class="table-active" scope="col">Employe</th> -->
           </tr>
 
          
                 <tr  class="table-striped"  *ngFor="let d of service.conges">
+                    <label  hidden for="inputState"><strong>Conge ID: {{d.id}} </strong></label>
+                    <td>{{d.id}}</td>
                     <td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
                     <td>{{d.personnel.marticule}}</td>
                         <td>{{d.dateDebut}}</td>
                         <td>{{d.dateFin}}</td>
                         <td>{{d.motif}}</td>
                         <td>{{d.etat}}</td>
-                    <td>
-                  
-            
-            
-                    </td>
+                        <td>
+                            <button class="btn text-warning"   data-bs-toggle="modal" data-bs-target="#staticBackdrop-2"
+                             (click)="motif.value=d.motif;
+                                        etat.value=d.etat;
+                                        dateDebut.value=d.dateDebut;
+                                        dateFin.value=d.dateFin;
+                                        service.conge=d">
+                            
+                            <i class="fas fa-user-edit fa-2x " style="font-size: 15px;"></i></button>
+                            <div id="staticBackdrop-2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                               <div id="modaldialog-1" class="modal-dialog">
+                                   <div id="modalcontent-1" class="modal-content">
+                                       <div id="modalheader-1" class="modal-header">
+                                           <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Modifier un congé</strong></h1><button class="btn btn-primary btn-close" type="button" data-bs-dismiss="modal"></button>
+                                       </div>
+                                       <div id="modalbody-1" class="modal-body">
+                                           <div class="card shadow">
+                                               <div class="card-body">
+                                                <form ngForm="form">
+                                                    <div class="row">
+                                                      <div class="col">
+                                                        <label for="inputState"><strong>Personnel : {{d.personnel.nom}} {{d.personnel.prenom}}</strong></label><br>
+                                                        <label for="inputState"><strong>Personnel ID: {{d.personnel.id}} </strong></label>
+
+
+                                                      </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                      <div class="col">
+                                                        <div class="col-12" style="text-align: left;">
+                                                          <label class="form-label"><strong>Date De début:</strong></label>
+                                                              <input type="date" [(ngModel)]="service.conge.dateDebut" name="datedebut"class="form-control" #dateDebut [value]="dateDebut" value="{{d.dateDebut}}">
+                                                            </div>
+                                                      </div>
+                                                      <div class="col">
+                                                        <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin
+                                                              :</strong></label>
+                                                              <input type="date" [(ngModel)]="service.conge.dateFin" name="datedebut" class="form-control"  #dateFin [value]="dateFin">           
+                                                         </div>
+                                                      </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                      <div class="col">
+                                                        <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Motif
+                                                              :</strong></label>
+                                                          <select class="form-select" aria-label="Default select example"  [(ngModel)]="service.conge.motif" #motif  name="motif">
+                                                            <option selected>Selectionner</option>
+                                                            <option value="Mariage">Mariage</option>
+                                                            <option value="Maladie">Maladie</option>
+                                                            <option value="Annuel">Annuel</option>
+                                                            <option value="Décés">Décés</option>
+                                                            <option value="congé payé">congé payé</option>
+                                                          </select>
+                                                        </div>
+                                                        <div class="col">
+                                                          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Etat de congé
+                                                                :</strong></label>
+                                                            <select class="form-select" aria-label="Default select example" #etat [(ngModel)]="service.conge.etat"
+                                                              name="etat">
+                                                              <option selected>Selectionner</option>
+                                                              <option value="Validé">Validé</option>
+                                                              <option value="En cours d'examen">En cours d'examen</option>
+                                                              <option value="Refusé">Refusé</option>
+                                                            </select>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                    <br>
+                                                 <div id="modal-footer-1" class="modal-footer">
+                                                     <button class="btn btn-primary btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button>
+                                                     <button class="btn btn-primary" (click)="modifier()" type="button"  data-bs-dismiss="modal">Enregistrer</button></div>
+
+                                              
+                                                </form>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   
+                               </div>
+                           </div>                     
+                           &nbsp;
+
+                           <button (click)="service.conge=d;supprimer()" class="btn text-danger"  [routerLink]="['/backoffice/rh/conge']"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i> </button> 
+
+                            &nbsp;                           
+                            &nbsp;
+
+                            <button class="btn text-success"><i class="fa fa-print  fa-2x" aria-hidden="true"></i></button>
+                            &nbsp;                           
+                            &nbsp;
+                            <button (click)="service.conge=d;details()"  class="btn text-primary" ><i class="fa fa-info-circle  fa-2x" aria-hidden="true"></i></button>
+
+
+
+                        </td>
+                    
                 </tr>
      
 
