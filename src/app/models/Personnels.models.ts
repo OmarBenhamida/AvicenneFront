@@ -17,5 +17,6 @@ export class Personnel extends User {
     tel: string;
     intituleDiplome: string;
     situationFamiliale: string;
+    img:any;
 
 }

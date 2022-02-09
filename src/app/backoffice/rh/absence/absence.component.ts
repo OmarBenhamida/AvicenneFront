@@ -67,9 +67,9 @@ export class AbsenceComponent implements OnInit {
 
 
 
-  submit(idp : string) {
+  submit() {
     console.log();
-    this.service.post(idp).subscribe(res => {
+    this.service.post().subscribe(res => {
       this.getall();
       console.log(res);
     },

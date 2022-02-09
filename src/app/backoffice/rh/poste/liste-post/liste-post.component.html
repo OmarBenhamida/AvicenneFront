@@ -1,115 +1,248 @@
 <div class="container-fluid">
-  <div class="card shadow">
-  <div class="col-12">
-  <div class="card shadow">
-  <div class="card-header py-9">
-      <div class="row">
-      <p class="text-primary m-0 fw-bold"><strong>Gestion des posts</strong></p>
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <div class="row">
+                <p class="text-primary m-0 fw-bold"><strong>Gestion des Postes</strong></p>
+                <div style="text-align: right;">
 
-      </div>
-  </div>
-  <div class="card-body">
-      <div class="row">
-          <div class="col-md-6 text-nowrap">
-              <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show <select class="d-inline-block form-select form-select-sm">
-                          <option value="10" selected>10</option>
-                          <option value="25">25</option>
-                          <option value="50">50</option>
-                          <option value="100">100</option>
-                      </select> </label></div>
-          </div>
-          <div class="col-md-6">
-              <div class="text-md-end dataTables_filter" id="dataTable_filter">
-                  <a class="btn btn-primary" type="button" style="text-align: right;" [routerLink]="['/backoffice/rh/poste/affectation']"><i class="fas fa-location-arrow"></i> &nbsp;Affectation</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
 
-                  <a class="btn btn-primary" type="button" style="text-align: right;" type="submit" [routerLink]="['/backoffice/rh/poste/add']"><i class="fas fa-plus"></i>&nbsp; Ajouter Post</a>
-
-                  <label class="form-label">   </label>
-                <label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search" /></label>
-              </div>
-          </div>
-      </div>
-      <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-          <table class="table my-0" id="dataTable">
-              <thead>
-                  <tr>
-                      <th>Id</th>
-                      <th>Intitule</th>
-                      <th>Salaire Horaire</th>
-
-                      <th>Actions</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>001</td>
-                      <td>Responsable RH</td>
-                      <td>170 DH</td>
-
-                      <td>
-                         <button class="btn text-warning" style="margin-left: 5px;" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop-1"><i class="fas fa-user-edit" style="font-size: 15px;"></i></button>
-                          <div id="staticBackdrop-1" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                              <div id="modaldialog-1" class="modal-dialog">
-                                  <div id="modalcontent-1" class="modal-content">
-                                      <div id="modalheader-1" class="modal-header">
-                                          <h1 id="staticBackdropLabel-1" class="modal-title">Modifier un post</h1><button class="btn btn-primary btn-close" type="button" data-bs-dismiss="modal"></button>
-                                      </div>
-                                      <div id="modalbody-1" class="modal-body">
-                                          <div class="card shadow">
-                                              <div class="card-body">
-                                                  <form>
-                                                      <div class="mb-3">
-
-                                                      </div>
-                                                      <div class="row">
-                                                          <div class="col">
-                                                              <div class="mb-3"><label class="form-label" for="city"><strong>Intitule :</strong></label><input type="text" class="form-control" id="intitule" placeholder="medecin...." name="intitule" /></div>
-                                                          </div>
-
-                                                      </div>
-                                                      <div class="row">
-                                                          <div class="col">
-                                                              <div class="mb-3"><label class="form-label" for="city"><strong>Salaire Horaire :</strong></label><input type="text" class="form-control" id="salaireHoraire" placeholder="300...." name="salaireHoraire" /></div>
-                                                          </div>
-
-                                                      </div>
+                <div class="col-md-12">
+                    <div class="text-md-end dataTables_filter" id="dataTable_filter">
+                        <a class="btn btn-primary" type="button" style="text-align: right;"
+                            [routerLink]="['/backoffice/rh/poste/affectation']"><i class="fas fa-location-arrow"></i>
+                            &nbsp;Affectation</a>
+                        &nbsp;
+                        <a class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop-4" type="button" style="text-align: right;" type="submit"
+                            ><i class="fas fa-plus"></i>&nbsp; Ajouter
+                            Post</a>
 
 
 
-                                                  </form>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div id="modal-footer-1" class="modal-footer"><button class="btn btn-primary btn btn-secondary" type="button" data-bs-dismiss="modal">Fermer</button><button class="btn btn-primary" type="button">Enregistrer</button></div>
-                                  </div>
-                              </div>
-                          </div>
+                        <div id="staticBackdrop-4" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div id="modaldialog-1" class="modal-dialog">
+                                <div id="modalcontent-1" class="modal-content">
+                                    <div id="modalheader-1" class="modal-header">
+                                        <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Ajouter un
+                                                Poste</strong></h1><button class="btn btn-primary btn-close"
+                                            type="button" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div id="modalbody-1" class="modal-body">
+                                        <div class="card shadow">
+                                            <div class="card-body">
+                                                <form ngForm="form">
+                                                    <div class="row">
+                                                        <div class="col">
 
-                      </td>
-                  </tr>
 
-              </tbody>
-              <tfoot>
-                  <tr></tr>
-              </tfoot>
-          </table>
-      </div>
-      <div class="row">
-          <div class="col-md-6 align-self-center"></div>
-          <div class="col-md-6">
-              <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                  <ul class="pagination">
-                      <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                  </ul>
-              </nav>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-</div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="col-12" style="text-align: left;">
+                                                                <label
+                                                                    class="form-label"><strong>Libelle</strong></label>
+                                                                <input type="text" [(ngModel)]="servicee.poste.libelle"
+                                                                    name="libelle" class="form-control" #libelle
+                                                                    [value]="libelle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="col-12" style="text-align: left;"><label
+                                                                    class="form-label"><strong>Salaire Horaire
+                                                                        :</strong></label>
+                                                                <input type="text"
+                                                                    [(ngModel)]="servicee.poste.salairehoraire"
+                                                                    name="salairehoraire" class="form-control"
+                                                                    #salairehoraire >
+                                                            </div>
+                                                            <div class="col-12" style="text-align: left;"><label
+                                                                    class="form-label"><strong>Service
+                                                                        :</strong></label>
+                                                                <input type="text" [(ngModel)]="servicee.poste.service"
+                                                                    name="service" class="form-control" #service
+                                                                    >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <br>
+
+                                                    <br>
+                                                    <div id="modal-footer-1" class="modal-footer">
+                                                        <button class="btn btn-primary btn btn-secondary" type="button"
+                                                            data-bs-dismiss="modal">Fermer</button>
+                                                        <button class="btn btn-primary" (click)="submit()"
+                                                            type="button" data-bs-dismiss="modal">Ajouter</button>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <label class="form-label">   </label>
+                        <label class="form-label"><input type="search" class="form-control form-control-sm"
+                                aria-controls="dataTable" placeholder="Search" /></label>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                <label><strong>Liste Des Postes :</strong></label>
+                <br><br>
+                <table class="tftable" border="1">
+                    <tr>
+                        <th class="table-active" style="color: white;" scope="col">Numéro de Poste</th>
+                        <th class="table-active" style="color: white;" scope="col">Intitulé de poste</th>
+                        <th class="table-active" style="color: white;" scope="col">Salaire Horaire</th>
+                        <th class="table-active" style="color: white;" scope="col">Service </th>
+
+                        <th class="table-active" style="color: white;" scope="col">Actions</th>
+
+                        <!-- <th class="table-active" scope="col">Employe</th> -->
+                    </tr>
+
+
+                    <tr class="table-striped" *ngFor="let d of servicee.posts">
+                        <label hidden for="inputState"><strong>Salaire ID: {{d.id}} </strong></label>
+                        <td>{{d.id}}</td>
+
+                        <td>{{d.libelle}}</td>
+                        <td>{{d.salairehoraire}}</td>
+                        <td>{{d.service}}</td>
+
+
+                        <td>
+                            <button class="btn text-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-2"
+                                (click)="libelle.value=d.libelle;
+                               salairehoraire.value=d.salairehoraire+'';
+                               service.value=d.service;      
+                                          servicee.poste=d">
+
+                                <i class="fas fa-user-edit fa-2x " style="font-size: 15px;"></i></button>
+                            <div id="staticBackdrop-2" class="modal fade" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div id="modaldialog-1" class="modal-dialog">
+                                    <div id="modalcontent-1" class="modal-content">
+                                        <div id="modalheader-1" class="modal-header">
+                                            <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Modifier un
+                                                    Poste</strong></h1><button class="btn btn-primary btn-close"
+                                                type="button" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div id="modalbody-1" class="modal-body">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <form ngForm="form">
+                                                        <div class="row">
+                                                            <div class="col">
+
+
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="col-12" style="text-align: left;">
+                                                                    <label
+                                                                        class="form-label"><strong>Libelle</strong></label>
+                                                                    <input type="text"
+                                                                        [(ngModel)]="servicee.poste.libelle"
+                                                                        name="libelle" class="form-control" #libelle
+                                                                        [value]="libelle" value="{{d.libelle}}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <div class="col-12" style="text-align: left;"><label
+                                                                        class="form-label"><strong>Salaire Horaire
+                                                                            :</strong></label>
+                                                                    <input type="text"
+                                                                        [(ngModel)]="servicee.poste.salairehoraire"
+                                                                        name="salairehoraire" class="form-control"
+                                                                        #salairehoraire [value]="salairehoraire">
+                                                                </div>
+                                                                <div class="col-12" style="text-align: left;"><label
+                                                                        class="form-label"><strong>Service
+                                                                            :</strong></label>
+                                                                    <input type="text"
+                                                                        [(ngModel)]="servicee.poste.service"
+                                                                        name="service" class="form-control" #service
+                                                                        [value]="service">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+
+                                                        <br>
+                                                        <div id="modal-footer-1" class="modal-footer">
+                                                            <button class="btn btn-primary btn btn-secondary"
+                                                                type="button" data-bs-dismiss="modal">Fermer</button>
+                                                            <button class="btn btn-success" (click)="modifier()"
+                                                                type="button"
+                                                                data-bs-dismiss="modal">Enregistrer</button>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            &nbsp;
+
+                            <button (click)="servicee.poste=d;supprimer()" class="btn text-danger"
+                                [routerLink]="['/backoffice/rh/post']"><i class="fa fa-trash-o fa-2x"
+                                    aria-hidden="true"></i> </button>
+
+                            &nbsp;
+                            &nbsp;
+
+                            <button class="btn text-success"><i class="fa fa-print  fa-2x"
+                                    aria-hidden="true"></i></button>
+                            &nbsp;
+                            &nbsp;
+                            <button (click)="servicee.poste=d;details()" class="btn text-primary"><i
+                                    class="fa fa-info-circle  fa-2x" aria-hidden="true"></i></button>
+
+
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 align-self-center"></div>
+                <div class="col-md-6">
+                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
+                                        aria-hidden="true">«</span></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                                        aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

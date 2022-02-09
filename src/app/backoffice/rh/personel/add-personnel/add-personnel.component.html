@@ -1,112 +1,143 @@
-<div class="container-fluid">
-  <div class="d-sm-flex justify-content-between align-items-center mb-4">
-    <h3 class="text-dark mb-0">&nbsp;Ajouter un personnel</h3>
+<div class="card">
+  <div class="card-header">
+    <strong>Ajouter un Personnel</strong>
   </div>
+  <div class="card-body">
+    <form>
+      <div class="row">
 
-            <form id="main-form" class="multisteps-form__form">
-              <div id="single-form-next" class="multisteps-form__panel shadow p-4 rounded bg-white js-active"
-                data-animation="scaleIn">
-                <h3 class="text-center multisteps-form__title">
-                  Informations Personnelles
-                </h3>
-                <div id="form-content" class="multisteps-form__content">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Nom</strong></label>
+          <input type="text" [(ngModel)]="service.personnel.nom" name="nom" class="form-control" [value]="nom"
+            placeholder="Nom">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Prenom</strong></label>
+          <input type="text" [(ngModel)]="service.personnel.prenom" name="prenom" class="form-control" [value]="prenom"
+            placeholder="Prenom">
+        </div>
+      </div>
+      <br>
 
-                  <div id="input-grp-single-3" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="nom" placeholder="Nom"
-                        ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single-4" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="prenom" placeholder="Prénom"
-                        ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single" class="form-row mt-4">
-                    <div class="col-12">
-                      <label class="form-label">Date de Naissance</label>
-                      <input class="form-control" name="dateNaissance" type="date" ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single-5" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="cin" placeholder="CIN"
-                        ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single-5" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="cnss" placeholder="CNSS"
-                        ngModel />
-                    </div>
-                  </div>
+      <div class="form-group">
+        <label for="inputAddress"><strong>Address</strong></label>
+        <input type="text" [(ngModel)]="service.personnel.adresse" name="adresse" class="form-control" [value]="adresse"
+          placeholder="1234 Main St">
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="inputCity"><strong>CIN</strong></label>
+          <input type="text" [(ngModel)]="service.personnel.cin" name="cin" class="form-control" [value]="cin">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState"><strong>Sexe</strong></label>
+          <select [(ngModel)]="service.personnel.sexe" name="sexe" class="form-control" [value]="sexe">
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
 
-                  <div id="input-grp-single-7" class="form-row mt-4">
-                    <div class="col-12">
-                      <div>
-                        <fieldset>
-                          <legend>Sexe :</legend>
-                          <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" class="custom-control-input" value="homme" name="sexe"
-                              checked ngModel /><label class="form-label custom-control-label"
-                              for="customRadio1"> Homme</label>
-                          </div>
-                          <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" class="custom-control-input" value="femme" name="sexe"
-                              ngModel /><label class="form-label custom-control-label" for="customRadio2"> Femme</label>
-                          </div>
-                        </fieldset>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="input-grp-single-6" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="adresse"
-                        placeholder="Adresse" ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single-1" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="situationFamiliale"
-                        placeholder="Sitiation familiale" ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single" class="form-row mt-4">
-                    <div class="col-12">
-                      <label class="form-label">Date d'embauche</label><input class="form-control" name="dateEmbauche"
-                        type="date" ngModel />
-                    </div>
-                  </div>
-
-                  <div id="input-grp-single-8" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="service"
-                        placeholder="Service" ngModel />
-                    </div>
-                  </div>
-
-                  <div id="input-grp-single-9" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="tel"
-                        placeholder="Numéro Tel :" ngModel />
-                    </div>
-                  </div>
-                  <div id="input-grp-single-2" class="form-row mt-4">
-                    <div class="col-12">
-                      <input type="text" class="form-control multisteps-form__input" name="login" placeholder="Email"
-                        ngModel />
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-
-              <br>
-
-              <button type="button"  class="btn btn-primary">Ajouter</button>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputZip"><strong>Matricule</strong></label>
+          <input type="text" [(ngModel)]="service.personnel.marticule" name="marticule" class="form-control"
+            [value]="marticule">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="col-12" style="text-align: left;">
+            <label class="form-label"><strong>Date De Naissance:</strong></label>
+            <input type="date" [(ngModel)]="service.personnel.dateNaissance" name="dateNaissance" class="form-control"
+              [value]="dateNaissance">
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Lieu De Naissance
+                :</strong></label>
+            <input type="text" [(ngModel)]="service.personnel.lieuNaissance" name="lieuNaissance" class="form-control"
+              [value]="lieuNaissance" placeholder="Ville de Naissance">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="col-12" style="text-align: left;">
+            <label class="form-label"><strong>Date D'embauche:</strong></label>
+            <input type="date" [(ngModel)]="service.personnel.dateEmbauche" name="dateEmbauche" class="form-control"
+              [value]="dateEmbauche">
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Situation Familliale
+                :</strong></label>
+            <select [(ngModel)]="service.personnel.situationFamiliale" name="situationFamiliale" class="form-control"
+              [value]="situationFamiliale">
+              <option value="Célibataire">Célibataire</option>
+              <option value="Marié">Marié</option>
+              <option value="Divorcé">Divorcé</option>
+              <option value="Veuf(ve)">Veuf(ve)</option>
 
 
 
-            </form>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Email</strong></label>
+          <input type="email" [(ngModel)]="service.personnel.email" name="email" class="form-control"  [value]="email"
+          placeholder="Email">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Password</strong></label>
+          <input type="password"  [(ngModel)]="service.personnel.passeword" name="passeword" class="form-control" [value]="passeword" placeholder="Password">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Nombre D'enfant</strong></label>
+          <input type="number"  [(ngModel)]="service.personnel.nbrEnfant" name="nbrEnfant" class="form-control" [value]="nbrEnfant">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Numéro De Sécurité Social</strong></label>
+          <input type="text"  [(ngModel)]="service.personnel.securiteSocial" name="securiteSocial" class="form-control" [value]="securiteSocial" placeholder="CNSS / CNOPS">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Intitulé Du Diplome</strong></label>
+          <input type="text"  [(ngModel)]="service.personnel.intituleDiplome" name="intituleDiplome" class="form-control" [value]="intituleDiplome" placeholder="Intitulé Du Diplome">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Téléphone</strong></label>
+          <input type="text"  [(ngModel)]="service.personnel.tel" name="tel" class="form-control" [value]="tel" placeholder="+212 6 ......">
+        </div>
+        
+      </div>
+      <br>
+      <div class="row">
+      <div class="form-group">
+        <label><strong>Importer l'image</strong></label><br>
+        <span style="color:red;" *ngIf="message">{{message}}</span>
+        <input  class="form-control" #newimage type="file" accept='image/*' (change)="onImageUpload($event);preview(newimage.files)">
+        <br>
+        <img [src]="imgURL" height="200" *ngIf="imgURL" class="center">
+      </div>
+    </div>
+      <br>
+      <button type="submit" (click)="submit()" class="btn btn-primary"
+        [routerLink]="['/backoffice/rh/personnel']">Ajouter</button>
+    </form>
+  </div>
+</div>

@@ -17,21 +17,24 @@ export class AbsenceService {
     constructor(private http: HttpClient) { }
 
 
-    get(id:number) {
+
+    get(id: number) {
         return this.http.get(this.url + '/' + id);
 
     }
 
     getall() {
-        return this.http.get(this.url );
-     }
-
-    post(idp:string) {
-        return this.http.post(this.url+"/add/"+idp, this.absence);
+       return this.http.get(this.url);
     }
 
+    post() {
+      return this.http.post(this.url, this.absence);
+
+  }
+
+
     put() {
-        //delete this.absence.personnel;
+       // delete this.absence.personnel;
 
         return this.http.put(this.url + '/' + this.absence.id, this.absence);
     }

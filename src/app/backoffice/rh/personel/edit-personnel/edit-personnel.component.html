@@ -1,67 +1,132 @@
+<div class="card">
+  <div class="card-header">
+    <strong>Editer un Personnel</strong>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="row">
 
-<style>
-
-
-
-    /*======================
-        404 page
-    =======================*/
-  
-  
-    .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
-    }
-  
-    .page_404  img{ width:100%;}
-  
-    .four_zero_four_bg{
-  
-     background-image: url(https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif);
-        height: 650px;
-        background-position: center;
-     }
-  
-  
-     .four_zero_four_bg h1{
-     font-size:80px;
-     }
-  
-      .four_zero_four_bg h3{
-           font-size:80px;
-           }
-  
-           .link_404{
-      color: #fff!important;
-        padding: 10px 20px;
-        background: #000f61;
-        margin: 20px 0;
-        display: inline-block;}
-      .contant_box_404{ margin-top:-50px;}
-  
-  
-  
-    </style>
-    <section class="page_404">
-      <div class="container">
-        <div class="row">
-        <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="four_zero_four_bg">
-  
-  
-  
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Nom</strong></label>
+          <input type="text"  [(ngModel)]="service.personnel.nom" name="nom"  class="form-control" value="{{o.nom}}">
         </div>
-  
-        <div class="contant_box_404">
-        <h3 class="h2">
-          Module En Cours De Développement    </h3>
-  
-        <p>Merci Pour Votre Patience</p>
-  
-        <a class="link_404" [routerLink]="['/backoffice']" routerLinkActive="router-link-active">Revenir à l'accueil</a>
-      </div>
-        </div>
-        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Prenom</strong></label>
+          <input type="text"  [(ngModel)]="service.personnel.prenom" name="prenom"  class="form-control" value="{{o.prenom}}">
         </div>
       </div>
-    </section>
-  
+      <br>
+
+      <div class="form-group">
+        <label for="inputAddress"><strong>Address</strong></label>
+        <input type="text" class="form-control"  [(ngModel)]="service.personnel.adresse" name="adresse"  value="{{o.adresse}}">
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="inputCity"><strong>CIN</strong></label>
+          <input type="text" class="form-control"   [(ngModel)]="service.personnel.cin" name="cin"  value="{{o.cin}}">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState"><strong>Sexe</strong></label>
+          <select class="form-control" value="{{o.sexe}}"  [(ngModel)]="service.personnel.sexe" name="sexe" >
+            <option>Homme</option>
+            <option>Femme</option>
+
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputZip"><strong>Matricule</strong></label>
+          <input type="text" class="form-control"  [(ngModel)]="service.personnel.marticule" name="marticule"  value="{{o.marticule}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="col-12" style="text-align: left;">
+            <label class="form-label"><strong>Date De Naissance:</strong></label>
+            <input type="date" name="dateNaissance" class="form-control"  [(ngModel)]="service.personnel.dateNaissance"  value="{{o.dateNaissance}}">
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Lieu De Naissance
+                :</strong></label>
+            <input type="text" class="form-control"  [(ngModel)]="service.personnel.lieuNaissance" name="lieuNaissance" value="{{o.lieuNaissance}}">
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="col-12" style="text-align: left;">
+            <label class="form-label"><strong>Date D'embauche:</strong></label>
+            <input type="date" value="{{o.dateEmbauche}}"   [(ngModel)]="service.personnel.dateEmbauche" name="dateEmbauche" class="form-control">
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Situation Familliale
+                :</strong></label>
+            <select class="form-control"  [(ngModel)]="service.personnel.situationFamiliale" name="situationFamiliale"  value="{{o.situationFamiliale}}">
+              <option>Célibataire</option>
+              <option>Marié</option>
+              <option>Divorcé</option>
+              <option>Veuf(ve)</option>
+
+
+
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Email</strong></label>
+          <input type="email" class="form-control"  [(ngModel)]="service.personnel.email" name="email" value="{{o.email}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Password</strong></label>
+          <input type="password"  [(ngModel)]="service.personnel.passeword" name="passeword" class="form-control" value="{{o.passeword}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Nombre D'enfant</strong></label>
+          <input type="number" value="{{o.nbrEnfant}}"  [(ngModel)]="service.personnel.nbrEnfant" name="nbrEnfant" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Numéro De Sécurité Social</strong></label>
+          <input type="text" class="form-control"  [(ngModel)]="service.personnel.securiteSocial" name="securiteSocial" value="{{o.securiteSocial}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+
+        <div class="form-group col-md-6">
+          <label for="inputEmail4"><strong>Intitulé Du Diplome</strong></label>
+          <input type="text" class="form-control"  [(ngModel)]="service.personnel.intituleDiplome" name="intituleDiplome" value="{{o.intituleDiplome}}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><strong>Téléphone</strong></label>
+          <input type="text" class="form-control"  [(ngModel)]="service.personnel.tel" name="tel" value="{{o.tel}}">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group">
+          <label><strong>Importer l'image</strong></label><br>
+          <span style="color:red;" *ngIf="message">{{message}}</span>
+          <input  class="form-control" #newimage type="file" accept='image/*' (change)="onImageUpload($event);preview(newimage.files)">
+          <br>
+          <img [src]="imgURL" height="200" *ngIf="imgURL" class="center">
+        </div>
+      </div>
+      <br>
+      <button type="submit" (click)="modifier()" class="btn btn-success">Enregistrer</button>
+    </form>
+  </div>
+</div>

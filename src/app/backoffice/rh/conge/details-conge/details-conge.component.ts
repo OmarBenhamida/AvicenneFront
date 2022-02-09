@@ -26,6 +26,10 @@ export class DetailsCongeComponent implements OnInit {
 
     
   }
+
+  getImage() {
+    return  'data:image/jpeg;base64,' + this.o.personnel.img;
+  }
  
 
 

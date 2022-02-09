@@ -1,42 +1,58 @@
-
 <div class="card">
+  <div class="card-header">
+    <strong>Ajouter un Absence</strong>
+  </div>
   <div class="card-body">
-    <form>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Date Absence</label>
+    <form ngForm="form">
+      <div class="row">
+        <div class="col">
+          <label for="inputState"><strong>Personnel : </strong></label>
           <br>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Date de l'absence">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Type Absence</label>
-          <br>
-          <select  id="inputState" class="form-control">
-            <option value="true">Justifié</option>
-            <option value="false">Non-justifié</option>
+          
+          <select class="form-control" [(ngModel)]="service.absence.idpersonnel" name="idpersonnel">
+            <option selected>Employé</option>
+            <option *ngFor="let items of uow.personnels" [value]="items.id">{{ items.nom }} {{ items.prenom }}
+            </option>
 
           </select>
+
         </div>
       </div>
-      <div class="form-group col-md-6">
-        <label for="inputAddress">justification</label>
-        <br>
-        <input type="text" class="form-control" id="inputAddress" placeholder="Certificat médical.......">
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="col-12" style="text-align: left;">
+            <label class="form-label"><strong>Date D'absence:</strong></label>
+                <input type="date" [(ngModel)]="service.absence.dateAbsence" name="datedebut" class="form-control" [value]="dateAbsence">
+              </div>
+        </div>
+        <div class="col">
+          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Justification de l'absence
+                :</strong></label>
+                <input type="text" [(ngModel)]="service.absence.justification" name="datedebut" class="form-control" [value]="justification">           
+           </div>
+        </div>
       </div>
-
-
-      <div class="form-group col-md-4">
-        <label for="inputState">Personnel</label>
-        <br>
-        <select *ngFor="let o of uow.personnels" id="inputState" class="form-control">
-          <option selected>Choose...</option>
-          <option>{{o.nom}} {{o.prenom}}</option>
-        </select>
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="mb-3" style="text-align: left;"><label class="form-label" for="city"><strong>Type De absence
+                :</strong></label>
+            <select class="form-select" aria-label="Default select example"  [(ngModel)]="service.absence.type" name="type">
+              <option selected>Selectionner</option>
+              <option value="true">Absence Justifié</option>
+              <option value="false">Absence Non Justifié</option>
+             
+            </select>
+          </div>
+        
+        </div>
       </div>
-
       <br>
 
-      <button type="submit"   class="btn btn-primary">Ajouter</button>
+      <button type="submit" (click)="submit()" class="btn btn-primary" [routerLink]="['/backoffice/rh/absence']">Ajouter</button>
+
     </form>
-      </div>
+
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Personnel } from 'src/app/models/Personnels.models';
 import { Retard } from 'src/app/models/Retards.models';
 import { PersonnelService } from 'src/app/shared/personnel.service';
 import { RetardService } from 'src/app/shared/retard.service';
@@ -18,25 +19,28 @@ export class AddRetardComponent implements OnInit {
   justification: string
   nbrHeure : number
   t: Retard[] = [];
+  idpersonnel: number;
+  personnel : Personnel;
+  retardModifie : Retard = Object();
+
+
 
  // personnel = this.uow.get(this.id);
 
-  constructor(public service: RetardService, public uow: PersonnelService, public router : Router) { }
+  constructor(public service: RetardService, public uow: PersonnelService,private router : Router) { }
 
   ngOnInit(): void {
 
-    // this.service.absence = {
+    this.service.retard = {
+      id: 0,
+      dateRetard: "null",
+      type: true,
+      justification: "null",
+      nbrHeure: 0,
+      idpersonnel: 0,
+      personnel: new Personnel
 
-    //   id: 0,
-    //   dateAbsence: "",
-    //   type: false,
-    //   justification: "",
-    //   idpersonnel: 0,
-    //   personnel : Object
-
-    // },
-
-
+    },
 
     this.getall();
     this.uow.getall();
@@ -62,13 +66,9 @@ export class AddRetardComponent implements OnInit {
 
 
   submit() {
-
-    this.router.navigate(['/backoffice/rh/retard']);
-
-    console.log('post is runing');
-    this.service.post2().subscribe(res => {
+    console.log();
+    this.service.post().subscribe(res => {
       this.getall();
-
       console.log(res);
     },
       err => {
@@ -81,7 +81,6 @@ export class AddRetardComponent implements OnInit {
   modifier() {
 
     this.service.put().subscribe(res => {
-      this.getall();
     },
       err => {
         console.log(err);
@@ -93,7 +92,7 @@ export class AddRetardComponent implements OnInit {
 
     this.service.delete().subscribe(res => {
       this.getall();
-    },
+      this.uow.getall();    },
       err => {
         console.log(err);
       }
@@ -112,22 +111,26 @@ export class AddRetardComponent implements OnInit {
 
   }
   selectionChange() {
-    // this.t = this.service.conges;
-    // this.service.conges = [];
-    this.t = this.service.retards.filter(e => +e.id_personnel === +this.service.retard.id_personnel);
+    // this.t = this.service.retards;
+    // this.service.retards = [];
+    this.t = this.service.retards.filter(e => +e.idpersonnel === +this.service.retard.idpersonnel);
 
   }
-  RechercheParDate() {
 
-    if (this.service.retard.dateRetard === null) {
+  imprimer() {
 
-      this.t = this.service.retards;
+    this.router.navigate(['/backoffice/rh/retard/details', +this.service.retard.id]);
 
-    } else {
-      this.t = this.service.retards.filter(e => e.dateRetard === this.service.retard.dateRetard);
 
-    }
   }
+
+  details() {
+
+    this.router.navigate(['/backoffice/rh/conge/details', +this.service.retard.id]);
+
+
+  }
+
 
 
 

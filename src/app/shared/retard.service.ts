@@ -11,32 +11,28 @@ import { Retard } from '../models/Retards.models';
 export class RetardService {
     url = 'http://localhost:5505/rest/retard';
     retards: Retard[];
-    retard = new Retard();
+    retard: Retard;
 
     constructor(private http: HttpClient) { }
 
 
-    get(id:number) {
+    get(id: number) {
         return this.http.get(this.url + '/' + id);
 
     }
 
     getall() {
-        return this.http.get(this.url);
-     }
-
-    post(idp:string) {
-      return this.http.post(this.url+"/add/"+idp, this.retard);
+       return this.http.get(this.url);
     }
 
-    post2() {
-    console.warn(this.retard);
+    post() {
+      return this.http.post(this.url, this.retard);
 
-      return this.http.post(this.url+"/post", this.retard);
-    }
+  }
+
 
     put() {
-        //delete this.retard.personnel;
+       // delete this.retard.personnel;
 
         return this.http.put(this.url + '/' + this.retard.id, this.retard);
     }

@@ -1,77 +1,190 @@
+<div class="container-fluid">
+  <div class="card shadow">
+    <div class="card-header py-3">
+      <div class="row">
+        <p class="text-primary m-0 fw-bold"><strong>Gestion des retards</strong></p>
+        <div style="text-align: right;">
 
-                <div class="container-fluid">
-                  <div class="card shadow">
-                <div class="card-header py-3">
-                    <div class="row">
-                    <p class="text-primary m-0 fw-bold"><strong>Gestion Des Retards</strong></p>
-                    <div style="text-align: right;">
-                   </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="text-md-end dataTables_filter" id="dataTable_filter">
+            <a class="btn btn-primary" type="button" style="text-align: right;"
+              [routerLink]="['/backoffice/rh/retard/add']"><i class="fas fa-plus"></i>&nbsp; Ajouter Retard</a>
+            <div id="staticBackdrop-1" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+            </div>
+            <label class="form-label">   </label>
+            <label class="form-label"><input type="search" class="form-control form-control-sm"
+                aria-controls="dataTable" placeholder="Search" /></label>
+          </div>
+        </div>
+      </div>
+      <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+        <label><strong>Liste Des Retards :</strong></label>
+        <br><br>
+        <table class="tftable" border="1">
+          <tr>
+            <th class="table-active" style="color: white;" scope="col">Identifiant de retard</th>
+            <th class="table-active" style="color: white;" scope="col">Nom et prenom</th>
+            <th class="table-active" style="color: white;" scope="col">Matricule</th>
+            <th class="table-active" style="color: white;" scope="col">Date Retard</th>
+            <th class="table-active" style="color: white;" scope="col">Type</th>
+            <th class="table-active" style="color: white;" scope="col">Justification</th>
+            <th class="table-active" style="color: white;" scope="col">Nombre d'heure</th>
+            <th class="table-active" style="color: white;" scope="col">Actions</th>
+
+            <!-- <th class="table-active" scope="col">Employe</th> -->
+          </tr>
+
+
+          <tr class="table-striped" *ngFor="let d of service.retards">
+            <label hidden for="inputState"><strong>retard ID: {{d.id}} </strong></label>
+            <td>{{d.id}}</td>
+            <td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
+            <td>{{d.personnel.marticule}}</td>
+            <td>{{d.dateRetard}}</td>
+            <td>{{d.type}}</td>
+            <td>{{d.justification}}</td>
+            <td>{{d.nbrHeure}}</td>
+            <td>
+              <button class="btn text-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-2" 
+                                          (click)="type.value=d.type+'';
+                                          nbrHeure.value=d.nbrHeure+'';
+                                        dateRetard.value=d.dateRetard;
+                                        justification.value=d.justification;
+                                        service.retard=d">
+
+                <i class="fas fa-user-edit fa-2x " style="font-size: 15px;"></i></button>
+              <div id="staticBackdrop-2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div id="modaldialog-1" class="modal-dialog">
+                  <div id="modalcontent-1" class="modal-content">
+                    <div id="modalheader-1" class="modal-header">
+                      <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Modifier un retard</strong></h1><button
+                        class="btn btn-primary btn-close" type="button" data-bs-dismiss="modal"></button>
                     </div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                     
-                        <div class="col-md-12">
-                          <div class="text-md-end dataTables_filter" id="dataTable_filter">
-                              <a class="btn btn-primary" type="button" style="text-align: right;" type="submit"  [routerLink]="['/backoffice/rh/retard/add']"><i class="fas fa-plus"></i>&nbsp; Ajouter Retard</a>
+                    <div id="modalbody-1" class="modal-body">
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <form ngForm="form">
+                            <div class="row">
+                              <div class="col">
+                                <label for="inputState"><strong>Personnel : {{d.personnel.nom}}
+                                    {{d.personnel.prenom}}</strong></label><br>
+                                <label for="inputState"><strong>Personnel ID: {{d.personnel.id}} </strong></label>
 
 
-                              <label class="form-label">   </label>
-                            <label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search" /></label>
-                          </div>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                              <div class="col">
+                                <div class="col-12" style="text-align: left;">
+                                  <label class="form-label"><strong>Date De Retard:</strong></label>
+                                  <input type="date" [(ngModel)]="service.retard.dateRetard" name="dateRetard"
+                                    class="form-control" #dateRetard [value]="dateRetard" value="{{d.dateRetard}}">
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="col-12" style="text-align: left;"><label
+                                    class="form-label"><strong>Justification
+                                      :</strong></label>
+                                  <input type="text" [(ngModel)]="service.retard.justification" name="justification"
+                                    class="form-control" #justification [value]="justification" value="{{d.justification}}">
+                                </div>
+                              </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                              <div class="col">
+                                <div class="mb-3" style="text-align: left;"><label class="form-label"
+                                    for="city"><strong>Motif
+                                      :</strong></label>
+                                  <select class="form-select" aria-label="Default select example"
+                                    [(ngModel)]="service.retard.type" #type name="type" value="{{d.type}}">
+                                    <option selected>Selectionner</option>
+                                    <option value=true>Retard Justifié</option>
+                                    <option value=false>Retard Non Justifié</option>
+
+                                  </select>
+                                </div>
+                                <div class="col">
+                                  <div class="mb-3" style="text-align: left;"><label class="form-label"
+                                      for="country"><strong>Nombre d'heure
+                                        :</strong></label>
+
+                                    <input type="number" [(ngModel)]="service.retard.nbrHeure" name="datedebut"
+                                      #nbrHeure class="form-control" [value]="nbrHeure" value="{{d.nbrHeure}}">
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <br>
+                            <div id="modal-footer-1" class="modal-footer">
+                              <button class="btn btn-primary btn btn-secondary" type="button"
+                                data-bs-dismiss="modal">Fermer</button>
+                              <button class="btn btn-primary" (click)="modifier()" type="button"
+                                data-bs-dismiss="modal">Enregistrer</button>
+                            </div>
+
+
+                          </form>
+                        </div>
                       </div>
                     </div>
-                    <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
-                      <label>Liste Retards : </label>
-
-                      <table class="tftable" border="1">
-                        <tr>
-                          <th class="table-active" scope="col">ID</th>
-                          <th class="table-active" scope="col">Date Retard</th>
-                          <th class="table-active" scope="col">Type</th>
-                          <th class="table-active" scope="col">Nombre d'heure</th>
-                          <th class="table-active" scope="col">Justification</th>
-                          <!-- <th class="table-active" scope="col">Employe</th> -->
-                        </tr>
-
-                        <tr class="table-striped" *ngFor="let item of t">
-                          <td>{{item.id}}</td>
-                          <td>{{item.dateRetard}}</td>
-                          <td>{{item.type}}</td>
-                          <td>{{item.nbrHeure}}</td>
-                          <td>{{item.justification}}</td>
-                          <!-- <td>{{item.personnel?.nom}} {{item.personnel?.prenom}}</td> -->
-
-
-
-                          <!-- <td>{{item.nbrEnfant}}</td> -->
-
-
-                        </tr>
-
-                      </table>
-
-
-                    </div>
-                    <div class="col-1"></div>
-
                   </div>
+
                 </div>
+              </div>
+              &nbsp;
+
+              <button (click)="service.retard=d;supprimer()" class="btn text-danger"
+                [routerLink]="['/backoffice/rh/retard']"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+              </button>
+
+              &nbsp;
+              &nbsp;
+
+              <button class="btn text-success"><i class="fa fa-print  fa-2x" aria-hidden="true"></i></button>
+              &nbsp;
+              &nbsp;
+              <button (click)="service.retard=d;details()" class="btn text-primary"><i class="fa fa-info-circle  fa-2x"
+                  aria-hidden="true"></i></button>
 
 
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 align-self-center"></div>
-                        <div class="col-md-6">
-                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
 
+            </td>
+
+          </tr>
+
+
+        </table>
+
+
+      </div>
+      <div class="row">
+        <div class="col-md-6 align-self-center"></div>
+        <div class="col-md-6">
+          <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
+                    aria-hidden="true">«</span></a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                    aria-hidden="true">»</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { ListPersonnelComponent } from './list-personnel/list-personnel.componen
 import { PersonelComponent } from './personel.component';
 import { PersonelRoutingModule } from './personel-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,6 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     PersonelRoutingModule
   ]

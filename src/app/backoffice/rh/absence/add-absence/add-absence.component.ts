@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Absence } from 'src/app/models/Absences.models';
+import { Personnel } from 'src/app/models/Personnels.models';
 import { AbsenceService } from 'src/app/shared/absence.service';
 import { PersonnelService } from 'src/app/shared/personnel.service';
 
@@ -14,27 +16,29 @@ export class AddAbsenceComponent implements OnInit {
   id: number;
   dateAbsence: string;
   type: boolean;
-  justification: string;
+  justification: string
   t: Absence[] = [];
+  idpersonnel: number;
+  personnel : Personnel;
+  AbsenceModifie : Absence = Object();
+
+
 
  // personnel = this.uow.get(this.id);
 
-  constructor(public service: AbsenceService, public uow: PersonnelService) { }
+  constructor(public service: AbsenceService, public uow: PersonnelService,private router : Router) { }
 
   ngOnInit(): void {
 
-    // this.service.absence = {
+    this.service.absence = {
+      id: 0,
+      dateAbsence: "",
+      type: true,
+      justification: "",
+      idpersonnel: 0,
+      personnel: new Personnel
 
-    //   id: 0,
-    //   dateAbsence: "",
-    //   type: false,
-    //   justification: "",
-    //   idpersonnel: 0,
-    //   personnel : Object
-
-    // },
-
-
+    },
 
     this.getall();
     this.uow.getall();
@@ -59,9 +63,9 @@ export class AddAbsenceComponent implements OnInit {
 
 
 
-  submit(idp:string) {
+  submit() {
     console.log();
-    this.service.post(idp).subscribe(res => {
+    this.service.post().subscribe(res => {
       this.getall();
       console.log(res);
     },
@@ -75,7 +79,6 @@ export class AddAbsenceComponent implements OnInit {
   modifier() {
 
     this.service.put().subscribe(res => {
-      this.getall();
     },
       err => {
         console.log(err);
@@ -87,7 +90,7 @@ export class AddAbsenceComponent implements OnInit {
 
     this.service.delete().subscribe(res => {
       this.getall();
-    },
+      this.uow.getall();    },
       err => {
         console.log(err);
       }
@@ -106,24 +109,27 @@ export class AddAbsenceComponent implements OnInit {
 
   }
   selectionChange() {
-    // this.t = this.service.conges;
-    // this.service.conges = [];
+    // this.t = this.service.absences;
+    // this.service.absences = [];
     this.t = this.service.absences.filter(e => +e.idpersonnel === +this.service.absence.idpersonnel);
 
   }
-  RechercheParDate() {
 
-    if (this.service.absence.dateAbsence === null) {
+  imprimer() {
 
-      this.t = this.service.absences;
+    this.router.navigate(['/backoffice/rh/absence/details', +this.service.absence.id]);
 
-    } else {
-      this.t = this.service.absences.filter(e => e.dateAbsence === this.service.absence.dateAbsence);
 
-    }
   }
+
+  details() {
+
+    this.router.navigate(['/backoffice/rh/conge/details', +this.service.absence.id]);
+
+
+  }
+
 
 
 
 }
-

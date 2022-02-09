@@ -19,9 +19,10 @@ export class ListCongeComponent implements OnInit {
   dateFin: string;
   motif: string;
   etat : number;
+  t: Conge[] = [];
   idpersonnel: number;
   personnel : Personnel;
-  t: Conge[] = [];
+
   congeModifie : Conge = Object();
 
  // personnel = this.uow.get(this.id);

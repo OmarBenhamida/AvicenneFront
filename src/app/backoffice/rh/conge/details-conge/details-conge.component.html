@@ -1,82 +1,120 @@
+<div class="container bootstrap snippets bootdey">
+	<div class="row ng-scope">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+					<div class="pv-lg"><br><img class="center-block img-responsive img-circle img-thumbnail thumb96"
+						id="myimage"  [src]="getImage()" alt="Contact"></div>
+					<h3 class="m0 text-bold">{{o.personnel.nom}} {{o.personnel.prenom}}</h3>
+					<h4 class="m0 text-bold">{{o.personnel.email}} </h4>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th scope="col">Id</th>
+								<td>{{o.id}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Date début</th>
+								<td>{{o.dateDebut}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Date fin</th>
+								<td>{{o.dateFin}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Motif</th>
+								<td>{{o.motif}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Etat</th>
+								<td>{{o.etat}}</td>
+							</tr>
+						</tbody>
+					</table>
 
-<table  class="table table-striped">
-	<tbody >
-		<tr>
-      <th  scope="col">Id</th>
-      <td>{{o.id}}</td>
-		</tr>
-		<tr>
-      <th  scope="col">Date début</th>
-      <td>{{o.dateDebut}}</td>
-		</tr>
-		<tr>
-      <th  scope="col">Date fin</th>
-      <td>{{o.dateFin}}</td>
-		</tr>
-		<tr>
-      <th  scope="col">Motif</th>
-      <td>{{o.motif}}</td>
-		</tr>
-		<tr>
-      <th  scope="col">Etat</th>
-      <td>{{o.etat}}</td>
-		</tr>
-		<tr>
-			<td>Nom et Prenom </td>
-			<td>{{o.personnel.nom}} {{o.personnel.prenom}}</td>
-		</tr>
-		<tr>
-      <td>Cin</td>
-			<td>{{o.personnel.cin}}</td>
-		</tr>
-    <tr>
-			<td>Matricule</td>
-			<td>{{o.personnel.marticule}}</td>
-		</tr>
-		<tr>
-		  <td>Adresse</td>
-			<td>{{o.personnel.adresse}}</td>
-		</tr>
-		<tr>
-		  <td>Tel</td>
-			<td>{{o.personnel.tel}}</td>
-		</tr>
-		<tr>
-      <td>Email</td>
-			<td>{{o.personnel.email}}</td>
-		</tr>
-		<tr>
-		  <td>Situation Familiale</td>
-			<td>{{o.personnel.situationFamiliale}}</td>
-		</tr>
-		<tr>
-      <td>Sécurité Sociale</td>
-			<td>{{o.personnel.securiteSocial}}</td>
-		</tr>
-		<tr>
-		  <td>Sexe</td>
-			<td>{{o.personnel.sexe}}</td>
-		</tr>
-		<tr>
-      <td>Date Naissance</td>
-			<td>{{o.personnel.dateNaissance}}</td>
-		</tr>
-		<tr>
-      <td>Lieu Naissance</td>
-			<td>{{o.personnel.lieuNaissance}}</td>
-		</tr>
-		<tr>
-      <td>Date Embauche</td>
-			<td>{{o.personnel.dateEmbauche}}</td>
-		</tr>
-		<tr>
-      <td>Intitulé du diplome</td>
-			<td>{{o.personnel.intituleDiplome}}</td>
-		</tr>
-		<tr>
-      <td>Nombre d'enfant Naissance</td>
-			<td>{{o.personnel.nbrEnfant}}</td>
-		</tr>
-	
-	</tbody>
-</table>
+
+					<div class="text-center"><a class="btn btn-success" href="">Imprimer</a></div><br><br>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+			<div class="panel-body text-center">
+				<div class="panel-body">
+					<div class="pull-right">
+
+					</div>
+					<div class="h4 text-center">Contact Information</div>
+					<div class="row pv-lg">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-8">
+
+							<table class="table table-striped">
+								<tbody>
+
+
+									<tr>
+										<th scope="col">Cin</th>
+										<td>{{o.personnel.cin}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Matricule</th>
+										<td>{{o.personnel.marticule}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Adresse</th>
+										<td>{{o.personnel.adresse}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Tel</th>
+										<td>{{o.personnel.tel}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Email</th>
+										<td>{{o.personnel.email}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Situation Familiale</th>
+										<td>{{o.personnel.situationFamiliale}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Sécurité Sociale</th>
+										<td>{{o.personnel.securiteSocial}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Sexe</th>
+											<td>{{o.personnel.sexe}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Date Naissance</th>
+										<td>{{o.personnel.dateNaissance}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Lieu Naissance</th>
+										<td>{{o.personnel.lieuNaissance}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Date Embauche</th>
+										<td>{{o.personnel.dateEmbauche}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Intitulé du diplome</th>
+										<td>{{o.personnel.intituleDiplome}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Nombre d'enfant Naissance</th>
+										<td>{{o.personnel.nbrEnfant}}</td>
+									</tr>
+
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
