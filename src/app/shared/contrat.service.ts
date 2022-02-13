@@ -8,7 +8,7 @@ import { Personnel } from '../models/Personnels.models';
   providedIn: 'root'
 })
 export class ContratService {
-  url = 'http://localhost:5505/rest/contrats';
+  url = 'http://localhost:5505/rest/contrat';
   contrats: Contrat[];
   contrat: Contrat;
   user: Personnel;
@@ -32,7 +32,7 @@ get(id : number) {
 }
 
 getall() {
-  return this.http.get(this.url + '/getAll');
+  return this.http.get(this.url);
 }
 
 post() {

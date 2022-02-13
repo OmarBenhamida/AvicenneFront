@@ -1,53 +1,75 @@
-<form>
-  <div class="mb-3">
-      <div class="dropdown d-grid gap-2"><button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown"><strong>Personnel</strong></button>
-          <div class="dropdown-menu" id="consultationpatient" style="width:100%;"><input type="text" class="form-control form-control dropdown-search-input" placeholder="Search.." />
-              <a class="dropdown-item" href="#">Angular</a>
-              <a class="dropdown-item" href="#">Java</a>
-              <a class="dropdown-item" href="#">JavaScript</a>
+<div class="card">
+    <div class="card-header">
+      <strong>Ajouter un Contrat</strong>
+    </div>
+    <div class="card-body">
+      <form ngForm="form">
+        <div class="row">
+          <div class="col">
+            <label for="inputState"><strong>Personnel : </strong></label>
+            <br>
+            <br>
+            <select class="form-control" [(ngModel)]="service.contrat.idpersonnel" name="idpersonnel"   
+            >
+  
+            
+              <option selected>Employé</option>
+              <option *ngFor="let items of uow.personnels" [value]="items.id">{{ items.nom }} {{ items.prenom }}
+              </option>
+  
+            </select>
+            <br>
+   
           </div>
-          <div class="table-responsive table mt-2" id="consultationpatienttable" role="grid" aria-describedby="dataTable_info">
-              <table class="table my-0" id="dataTable">
-                  <thead>
-                      <tr>
-                          <th>Nom</th>
-                          <th>Prenom</th>
-                          <th>Cin</th>
-
-                      </tr>
-                  </thead>
-                  <tbody></tbody>
-                  <tfoot>
-                      <tr></tr>
-                  </tfoot>
-              </table>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+              <div class="col-12" style="text-align: left;">
+                <label class="form-label"><strong>Date De début:</strong></label>
+                <input type="date" [(ngModel)]="service.contrat.dateDebut" name="datedebut"
+                  class="form-control" #dateDebut [value]="dateDebut" >
+              </div>
+            </div>
+            <div class="col">
+              <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De
+                    Fin
+                    :</strong></label>
+                <input type="date" [(ngModel)]="service.contrat.dateFin" name="datedebut"
+                  class="form-control" #dateFin [value]="dateFin">
+              </div>
+            </div>
           </div>
-      </div>
-  </div>
-  <div class="row">
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label" ><strong>Date De début :</strong></label><input class="form-control" type="date" /></div>
-      </div>
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Fin :</strong></label><input class="form-control" type="date" /></div>
-      </div>
-  </div>
-  <br>
-  <div class="row">
-      <div class="col">
-          <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De Signature :</strong></label><input class="form-control" type="date" /></div>
-      </div>
-      <div class="col">
-          <div class="mb-3" style="text-align: left;"><label class="form-label" for="country"><strong>Type de contrat :</strong></label>
-              <select class="form-select" aria-label="Default select example">
-                  <option selected>Selectionner</option>
-                  <option value="1">CDD</option>
-                  <option value="3">CDI</option>
-                </select>
+          <br>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3" style="text-align: left;">
+                <label class="form-label"><strong>Date De dateSignature:</strong></label>
+                <input type="date" [(ngModel)]="service.contrat.dateSignature" name="datedebut"
+                  class="form-control" #dateSignature [value]="dateSignature" >
+              </div>
+              <div class="col">
+                <div class="mb-3" style="text-align: left;"><label class="form-label"
+                    for="country"><strong>Type de Contrat
+                      :</strong></label>
+                  <select class="form-select" aria-label="Default select example" #typeContrat
+                    [(ngModel)]="service.contrat.typeContrat" name="typeContrat">
+                    <option selected>Selectionner</option>
+                    <option value="CDI">CDI</option>
+                    <option value="CDD">CDD</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
+        <br>
+  
+        <button type="submit"  (click)="submit()" class="btn btn-primary" [routerLink]="['/backoffice/rh/contrat']">Ajouter</button>
+  
+      </form>
+  
+    </div>
+
+  
+  
   </div>
-
-
-
-</form>

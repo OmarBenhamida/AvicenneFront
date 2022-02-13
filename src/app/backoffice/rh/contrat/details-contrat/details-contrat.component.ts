@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Contrat } from 'src/app/models/Contrats.models';
+import { ContratService } from 'src/app/shared/contrat.service';
+import { PersonnelService } from 'src/app/shared/personnel.service';
 
 @Component({
   selector: 'app-details-contrat',
@@ -7,9 +12,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsContratComponent implements OnInit {
 
-  constructor() { }
+
+  o: Contrat = this.service.contrat;
+  id = 0;
+  dt = new Date();
+
+ // personnel = this.uow.get(this.id);
+
+  constructor(public service: ContratService, public uow: PersonnelService,private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+
+    
   }
 
+  getImage() {
+    return  'data:image/jpeg;base64,' + this.o.personnel.img;
+  }
+ 
+
+
+
 }
+

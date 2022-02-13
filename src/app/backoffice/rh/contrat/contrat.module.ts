@@ -5,6 +5,8 @@ import { AddContratComponent } from './add-contrat/add-contrat.component';
 import { DetailsContratComponent } from './details-contrat/details-contrat.component';
 import { ContratComponent } from './contrat.component';
 import { ContratRoutingModule } from './contrat-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,10 @@ import { ContratRoutingModule } from './contrat-routing.module';
   ],
   imports: [
     CommonModule,
-    ContratRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,  
+      ContratRoutingModule
   ]
 })
 export class ContratModule { }

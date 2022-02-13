@@ -9,13 +9,18 @@
           <label for="inputState"><strong>Personnel : </strong></label>
           <br>
           <br>
-          <select class="form-control" [(ngModel)]="service.conge.idpersonnel" name="idpersonnel">
+          <select class="form-control" [(ngModel)]="service.conge.idpersonnel" name="idpersonnel"   (change)="selectionChange($event)"
+          >
+
+          
             <option selected>Employé</option>
             <option *ngFor="let items of uow.personnels" [value]="items.id">{{ items.nom }} {{ items.prenom }}
             </option>
 
           </select>
-
+          <br>
+          <p> <b>Le nombre de jours pris est : {{totalDate}}/{{totalConge}} , il vous reste en solde
+            {{totalConge - totalDate}} </b></p>
         </div>
       </div>
       <br>
@@ -63,9 +68,57 @@
       </div>
       <br>
 
-      <button type="submit" (click)="submit()" class="btn btn-primary" [routerLink]="['/backoffice/rh/conge']">Ajouter</button>
+      <button type="submit"  (click)="submit()" class="btn btn-primary" [routerLink]="['/backoffice/rh/conge']">Ajouter</button>
 
     </form>
 
   </div>
+
+
+
+    
+  
+  
+  
+  
+   
+    <label><strong>Liste Des Congés :</strong></label>
+  <br><br>
+  <table class="tftable" border="1">
+    <tr>
+      <th class="table-active" style="color: white;" scope="col">Numéro de congé</th>
+      <th class="table-active" style="color: white;" scope="col">Nom et prenom</th>
+      <th class="table-active" style="color: white;" scope="col">Matricule</th>
+      <th class="table-active" style="color: white;" scope="col">Date début</th>
+      <th class="table-active" style="color: white;" scope="col">Date fin</th>
+      <th class="table-active" style="color: white;" scope="col">Motif</th>
+      <th class="table-active" style="color: white;" scope="col">Nombre Jour</th>
+
+      <th class="table-active" style="color: white;" scope="col">Etat</th>
+
+      <!-- <th class="table-active" scope="col">Employe</th> -->
+    </tr>
+
+
+    <tr class="table-striped" *ngFor="let d of tf">
+      <label hidden for="inputState"><strong>Conge ID: {{d.id}} </strong></label>
+      <td>{{d.id}}</td>
+      <td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
+      <td>{{d.personnel.marticule}}</td>
+      <td>{{d.dateDebut}}</td>
+      <td>{{d.dateFin}}</td>
+      <td>{{d.motif}}</td>
+      <td>{{dateDeff(d.dateDebut, d.dateFin)}}</td>
+      <td>{{d.etat}}</td>
+
+
+    </tr>
+
+
+  </table>
+
+ 
+
+
+
 </div>

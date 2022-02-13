@@ -1,67 +1,117 @@
+<div class="container bootstrap snippets bootdey">
+	<div class="row ng-scope">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-body text-center">
+					<div class="pv-lg"><br><img class="center-block img-responsive img-circle img-thumbnail thumb96"
+						id="myimage"  [src]="getImage()" alt="Contact"></div>
+					<h3 class="m0 text-bold">{{o.personnel.nom}} {{o.personnel.prenom}}</h3>
+					<h4 class="m0 text-bold">{{o.personnel.email}} </h4>
+					<table class="table table-striped">
+						<tbody>
+							<tr>
+								<th scope="col">Id</th>
+								<td>{{o.id}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Date Absence</th>
+								<td>{{o.dateAbsence}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Justification</th>
+								<td>{{o.justification}}</td>
+							</tr>
+							<tr>
+								<th scope="col">Type Retard</th>
+								<td>{{o.type}}</td>
+							</tr>
+				
+						</tbody>
+					</table>
 
-<style>
+
+					<div class="text-center"><a class="btn btn-success" href="">Imprimer</a></div><br><br>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-8">
+			<div class="panel panel-default">
+			<div class="panel-body text-center">
+				<div class="panel-body">
+					<div class="pull-right">
+
+					</div>
+					<div class="h4 text-center">Contact Information</div>
+					<div class="row pv-lg">
+						<div class="col-lg-2"></div>
+						<div class="col-lg-8">
+
+							<table class="table table-striped">
+								<tbody>
 
 
+									<tr>
+										<th scope="col">Cin</th>
+										<td>{{o.personnel.cin}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Matricule</th>
+										<td>{{o.personnel.marticule}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Adresse</th>
+										<td>{{o.personnel.adresse}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Tel</th>
+										<td>{{o.personnel.tel}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Email</th>
+										<td>{{o.personnel.email}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Situation Familiale</th>
+										<td>{{o.personnel.situationFamiliale}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Sécurité Sociale</th>
+										<td>{{o.personnel.securiteSocial}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Sexe</th>
+											<td>{{o.personnel.sexe}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Date Naissance</th>
+										<td>{{o.personnel.dateNaissance}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Lieu Naissance</th>
+										<td>{{o.personnel.lieuNaissance}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Date Embauche</th>
+										<td>{{o.personnel.dateEmbauche}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Intitulé du diplome</th>
+										<td>{{o.personnel.intituleDiplome}}</td>
+									</tr>
+									<tr>
+										<th scope="col">Nombre d'enfant Naissance</th>
+										<td>{{o.personnel.nbrEnfant}}</td>
+									</tr>
 
-    /*======================
-        404 page
-    =======================*/
-  
-  
-    .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
-    }
-  
-    .page_404  img{ width:100%;}
-  
-    .four_zero_four_bg{
-  
-     background-image: url(https://cdn.dribbble.com/users/722246/screenshots/3066818/404-page.gif);
-        height: 650px;
-        background-position: center;
-     }
-  
-  
-     .four_zero_four_bg h1{
-     font-size:80px;
-     }
-  
-      .four_zero_four_bg h3{
-           font-size:80px;
-           }
-  
-           .link_404{
-      color: #fff!important;
-        padding: 10px 20px;
-        background: #000f61;
-        margin: 20px 0;
-        display: inline-block;}
-      .contant_box_404{ margin-top:-50px;}
-  
-  
-  
-    </style>
-    <section class="page_404">
-      <div class="container">
-        <div class="row">
-        <div class="col-sm-12 ">
-        <div class="col-sm-10 col-sm-offset-1  text-center">
-        <div class="four_zero_four_bg">
-  
-  
-  
-        </div>
-  
-        <div class="contant_box_404">
-        <h3 class="h2">
-            Module En Cours De Développement    </h3>
-  
-        <p>Merci Pour Votre Patience</p>
-  
-        <a class="link_404" [routerLink]="['/backoffice']" routerLinkActive="router-link-active">Revenir à l'accueil</a>
-      </div>
-        </div>
-        </div>
-        </div>
-      </div>
-    </section>
-  
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

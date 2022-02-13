@@ -8,7 +8,9 @@ import { PersonnelService } from 'src/app/shared/personnel.service';
 @Component({
   selector: 'app-list-absence',
   templateUrl: './list-absence.component.html',
-  styleUrls: ['./list-absence.component.css']
+  styleUrls: ['./list-absence.component.css','../../../assets/fonts/fontawesome-all.min.css',
+  '../../../assets/fonts/font-awesome.min.css',
+  '../../../assets/fonts/fontawesome5-overrides.min.css',]
 })
 export class ListAbsenceComponent implements OnInit {
 

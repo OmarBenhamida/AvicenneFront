@@ -20,6 +20,12 @@ export class AddCongeComponent implements OnInit {
   idpersonnel: number;
   personnel : Personnel;
   t: Conge[] = [];
+  tf: Conge[] = [];
+
+
+
+  totalDate =0;
+  totalConge =0;
 
  // personnel = this.uow.get(this.id);
 
@@ -48,16 +54,13 @@ export class AddCongeComponent implements OnInit {
     this.service.getall().subscribe(r => {
       this.service.conges = r as any;
       this.t = r as any;
+      this.tf = r as any;
+
       console.log(r);
     });
   }
 
-
-  restaurertable(){
-    this.getall();
-  }
-
-
+  
 
 
 
@@ -110,13 +113,43 @@ export class AddCongeComponent implements OnInit {
     );
 
   }
-  selectionChange() {
+  selectionChange(e : any) {
+    console.log("1", +this.tf)
+
+    console.log(e.target.value)
     // this.t = this.service.conges;
     // this.service.conges = [];
-    this.t = this.service.conges.filter(e => +e.idpersonnel === +this.service.conge.idpersonnel);
 
+    this.tf = this.service.conges.filter(o => +o.personnel.id === +e.target.value);
+
+
+    console.log("2",+this.tf)
+
+    this.totalDate = 0;
+    //this.totalDeffDate();
   }
 
+  dateDeff(d1: string, d2: string) {
+    const difference_In_Time = new Date(d2).getTime() - new Date(d1).getTime();
+
+    return difference_In_Time / (1000 * 3600 * 24);
+  }
+
+  // totalDeffDate() {
+  //   this.tf.filter(e => e.etat === 'Validé').forEach(e => {
+  //     const tf = this.dateDeff(e.dateDebut, e.dateFin);
+  //     this.totalDate += tf;
+  //   });
+
+  //   const uniqYears = [...new Set(this.t.map(e => new Date(e.dateDebut).getFullYear()))];
+
+  //   this.totalConge = uniqYears.length * 30;
+  // }
+  
+
+
+
+  
 
 
 
