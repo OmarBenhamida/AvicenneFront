@@ -9,8 +9,10 @@ const routes: Routes = [
   path: '',
   component: DemandeComponent,
   children: [
+
+
   // { path: 'personnel', loadChildren: './personnel/personnel.module#PersonnelModule' },
-  { path: 'attesttation', loadChildren: () => import('./demande-attestation/demande-attestation.module').then(m => m.DemandeAttestationModule), },
+{ path: 'attesttation', loadChildren: () => import('./demande-attestation/demande-attestation.module').then(m => m.DemandeAttestationModule), },
   { path: 'conge', loadChildren: () => import('./demande-conge/demande-conge.module').then(m => m.DemandeCongeModule), },
   { path: 'fichepaie', loadChildren: () => import('./demande-fichepaie/demande-fichepaie.module').then(m => m.DemandeFichepaieModule), },
   
