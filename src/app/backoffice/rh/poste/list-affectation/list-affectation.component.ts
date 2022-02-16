@@ -8,12 +8,13 @@ import { PersonnelService } from 'src/app/shared/personnel.service';
 import { PostService } from 'src/app/shared/post.service';
 
 @Component({
-  selector: 'app-affectation',
-  templateUrl: './affectation.component.html',
-  styleUrls: ['./affectation.component.css']
+  selector: 'app-list-affectation',
+  templateUrl: './list-affectation.component.html',
+  styleUrls: ['./list-affectation.component.css','../../../assets/fonts/fontawesome-all.min.css',
+  '../../../assets/fonts/font-awesome.min.css',
+  '../../../assets/fonts/fontawesome5-overrides.min.css',]
 })
-export class AffectationComponent implements OnInit {
-
+export class ListAffectationComponent implements OnInit {
 
   id: number;
   dateDebut: string;

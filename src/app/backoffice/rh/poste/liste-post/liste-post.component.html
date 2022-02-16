@@ -14,8 +14,12 @@
                 <div class="col-md-12">
                     <div class="text-md-end dataTables_filter" id="dataTable_filter">
                         <a class="btn btn-primary" type="button" style="text-align: right;"
-                            [routerLink]="['/backoffice/rh/poste/affectation']"><i class="fas fa-location-arrow"></i>
-                            &nbsp;Affectation</a>
+                        [routerLink]="['/backoffice/rh/poste/listaffectation']"><i class="fas fa-location-arrow"></i>
+                        &nbsp; Liste Affectation</a>
+                    &nbsp;
+                        <a class="btn btn-primary" type="button" style="text-align: right;"
+                            [routerLink]="['/backoffice/rh/poste/affectation']"><i class="fas fa-user-plus"></i>
+                            &nbsp; Affectation</a>
                         &nbsp;
                         <a class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop-4" type="button" style="text-align: right;" type="submit"
                             ><i class="fas fa-plus"></i>&nbsp; Ajouter
@@ -206,15 +210,7 @@
                                 [routerLink]="['/backoffice/rh/post']"><i class="fa fa-trash-o fa-2x"
                                     aria-hidden="true"></i> </button>
 
-                            &nbsp;
-                            &nbsp;
-
-                            <button class="btn text-success"><i class="fa fa-print  fa-2x"
-                                    aria-hidden="true"></i></button>
-                            &nbsp;
-                            &nbsp;
-                            <button (click)="servicee.poste=d;details()" class="btn text-primary"><i
-                                    class="fa fa-info-circle  fa-2x" aria-hidden="true"></i></button>
+                       
 
 
 

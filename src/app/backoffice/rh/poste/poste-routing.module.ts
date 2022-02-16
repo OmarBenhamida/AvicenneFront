@@ -4,6 +4,7 @@ import { PosteComponent } from './poste.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { AffectationComponent } from './affectation/affectation.component';
 import { ListePostComponent } from './liste-post/liste-post.component';
+import { ListAffectationComponent } from './list-affectation/list-affectation.component';
 
 
 
@@ -17,6 +18,8 @@ const routes: Routes = [
       { path: 'add', component: AddPostComponent },
       { path: 'affectation', component: AffectationComponent },
       { path: 'list', component: ListePostComponent },
+    
+      { path: 'listaffectation', component: ListAffectationComponent },
 
 
     ],

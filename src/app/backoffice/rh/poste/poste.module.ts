@@ -7,6 +7,7 @@ import { PosteRoutingModule } from './poste-routing.module';
 import { ListePostComponent } from './liste-post/liste-post.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListAffectationComponent } from './list-affectation/list-affectation.component';
 
 
 
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     AddPostComponent,
     AffectationComponent,
     PosteComponent,
-    ListePostComponent
+    ListePostComponent,
+    ListAffectationComponent
   ],
   imports: [
     CommonModule,

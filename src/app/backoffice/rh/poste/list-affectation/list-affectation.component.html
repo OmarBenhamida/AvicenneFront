@@ -1,0 +1,169 @@
+<div class="container-fluid">
+    <div class="card shadow">
+        <div class="card-header py-3">
+            <div class="row">
+                <p class="text-primary m-0 fw-bold"><strong>Gestion des Affectation</strong></p>
+                <div style="text-align: right;">
+
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="text-md-end dataTables_filter" id="dataTable_filter">
+                 
+                        <a class="btn btn-primary" type="button" style="text-align: right;"
+                            [routerLink]="['/backoffice/rh/poste/affectation']"><i class="fas fa-location-arrow"></i>
+                            &nbsp;Affectation</a>
+                   
+
+                        <label class="form-label">   </label>
+                        <label class="form-label"><input type="search" class="form-control form-control-sm"
+                                aria-controls="dataTable" placeholder="Search" /></label>
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                <label><strong>Liste Des Affectations :</strong></label>
+                <br><br>
+                <table class="tftable" border="1">
+                    <tr>
+                        <th class="table-active" style="color: white;" scope="col">Numéro d'affectation</th>
+                        <th class="table-active" style="color: white;" scope="col">Collaborateur </th>
+                        <th class="table-active" style="color: white;" scope="col">Intitulé de poste</th>
+                        <th class="table-active" style="color: white;" scope="col">Date Debut </th>
+                        <th class="table-active" style="color: white;" scope="col">Date Fin </th>
+
+
+                        <th class="table-active" style="color: white;" scope="col">Actions</th>
+
+                        <!-- <th class="table-active" scope="col">Employe</th> -->
+                    </tr>
+
+
+                    <tr class="table-striped" *ngFor="let d of service.affectations">
+                        <label hidden for="inputState"><strong>Salaire ID: {{d.id}} </strong></label>
+                        <td>{{d.id}}</td>
+
+                        <td>{{d.personnel.nom}} {{d.personnel.prenom}}</td>
+                        <td>{{d.post.libelle}}</td>
+                        <td>{{d.dateDebut}}</td>
+                        <td>{{d.dateFin}}</td>
+
+
+
+                        <td>
+                            <button class="btn text-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-2"
+                            (click)="
+                                 dateDebut.value=d.dateDebut;
+                                 dateFin.value=d.dateFin;
+                                 service.affectation=d">
+
+                                <i class="fas fa-user-edit fa-2x " style="font-size: 15px;"></i></button>
+                            <div id="staticBackdrop-2" class="modal fade" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div id="modaldialog-1" class="modal-dialog">
+                                    <div id="modalcontent-1" class="modal-content">
+                                        <div id="modalheader-1" class="modal-header">
+                                            <h1 id="staticBackdropLabel-1" class="modal-title"><strong>Modifier une
+                                                    Affectation</strong></h1><button class="btn btn-primary btn-close"
+                                                type="button" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div id="modalbody-1" class="modal-body">
+                                            <div class="card shadow">
+                                                <div class="card-body">
+                                                    <form ngForm="form">
+                                                        <div class="row">
+                                                          <div class="col">
+                                                            <label for="inputState"><strong>Personnel : {{d.personnel.nom}}
+                                                                {{d.personnel.prenom}}</strong></label><br>
+                                                            <label for="inputState"><strong>Personnel ID: {{d.personnel.id}} </strong></label>
+                            
+                            
+                                                          </div>
+                                                          <div class="col">
+                                                            <label for="inputState"><strong>Post : {{d.post.libelle}}
+                                                               </strong></label><br>
+                                                            <label for="inputState"><strong>Post ID: {{d.post.id}} </strong></label>
+                            
+                            
+                                                          </div>
+                                                        </div>
+                                                        <br>
+                                                        <div class="row">
+                                                          <div class="col">
+                                                            <div class="col-12" style="text-align: left;">
+                                                              <label class="form-label"><strong>Date De début:</strong></label>
+                                                              <input type="date" [(ngModel)]="service.affectation.dateDebut" name="datedebut"
+                                                                class="form-control" #dateDebut [value]="dateDebut" value="{{d.dateDebut}}">
+                                                            </div>
+                                                          </div>
+                                                          <div class="col">
+                                                            <div class="col-12" style="text-align: left;"><label class="form-label"><strong>Date De
+                                                                  Fin
+                                                                  :</strong></label>
+                                                              <input type="date" [(ngModel)]="service.affectation.dateFin" name="datedebut"
+                                                                class="form-control" #dateFin [value]="dateFin">
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                        <br>
+                                             
+                                                        <br>
+                                                        <div id="modal-footer-1" class="modal-footer">
+                                                          <button class="btn btn-primary btn btn-secondary" type="button"
+                                                            data-bs-dismiss="modal">Fermer</button>
+                                                          <button class="btn btn-primary" (click)="modifier()" type="button"
+                                                            data-bs-dismiss="modal">Enregistrer</button>
+                                                        </div>
+                            
+                            
+                                                      </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            &nbsp;
+
+                            <button (click)="service.affectation=d;supprimer()" class="btn text-danger"
+                                [routerLink]="['/backoffice/rh/post']"><i class="fa fa-trash-o fa-2x"
+                                    aria-hidden="true"></i> </button>
+
+                       
+
+
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-6 align-self-center"></div>
+                <div class="col-md-6">
+                    <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                        <ul class="pagination">
+                            <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
+                                        aria-hidden="true">«</span></a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                                        aria-hidden="true">»</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
