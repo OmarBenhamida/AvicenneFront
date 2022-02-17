@@ -14,6 +14,7 @@ const routes: Routes = [
     path: '',
     component: DemandeCongeComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AdddemandeCongeComponent },
       { path: 'details', component: DetailsdemandeCongeComponent },
       { path: 'list', component: ListdemandeCongeComponent },

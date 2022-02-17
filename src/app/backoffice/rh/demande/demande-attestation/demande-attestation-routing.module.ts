@@ -13,6 +13,8 @@ const routes: Routes = [
     path: '',
     component: DemandeAttestationComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
+
       { path: 'add', component: AdddemandeAttestationComponent },
       { path: 'details', component: DetailsdemandeAttestationComponent },
       { path: 'list', component: ListdemandeAttestationComponent },

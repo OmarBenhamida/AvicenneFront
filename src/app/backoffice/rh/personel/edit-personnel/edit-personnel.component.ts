@@ -43,21 +43,8 @@ export class EditPersonnelComponent implements OnInit {
   constructor(public service: PersonnelService, private router: Router) { }
 
   ngOnInit(): void {
-
-    // this.service.absence = {
-
-    //   id: 0,
-    //   dateAbsence: "",
-    //   type: false,
-    //   justification: "",
-    //   idpersonnel: 0,
-    //   personnel : Object
-
-    // },
     this.imgURL=this.getImage();
-
-
-
+    console.log(this.imgURL)
     this.service.getall();
 
   }
@@ -83,18 +70,19 @@ export class EditPersonnelComponent implements OnInit {
     return  'data:image/jpeg;base64,' + this.service.personnel.img;
   }
   modifier() {
-
     // @ts-ignore
     var reader = new FileReader();
     var text: String;
     reader.readAsDataURL(this.uploadedImage);
     // @ts-ignore
     reader.onload = (e) => {
-
+      console.log(reader.result?.toString())
+      if(this.uploadedImage!=null){
       // @ts-ignore
       this.service.personnel.img = reader.result.toString().replace(/^data:image\/[a-z]+;base64,/, '');
-      // @ts-ignore
+      }
 
+      // @ts-ignore
       this.service.put().subscribe(res => {
         this.service.getall();
         this.router.navigate(['/backoffice/rh/personnel']);
@@ -103,7 +91,8 @@ export class EditPersonnelComponent implements OnInit {
           console.log(err);
         }
       );
-    }}
+    }
+  }
 
     preview(files: any) {
 

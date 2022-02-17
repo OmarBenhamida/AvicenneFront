@@ -14,6 +14,7 @@ const routes: Routes = [
     path: '',
     component: DemandeFichepaieComponent,
     children: [
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'add', component: AdddemandeFichepaieComponent },
       { path: 'details', component: DetailsdemandeFichepaieComponent },
       { path: 'list', component: ListdemandeFichepaieComponent },
