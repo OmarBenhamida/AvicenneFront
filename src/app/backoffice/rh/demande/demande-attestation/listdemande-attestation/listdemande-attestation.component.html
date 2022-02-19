@@ -29,7 +29,7 @@
         <label><strong>Liste Des demandes :</strong></label>
         <br><br>
         <table class="tftable" border="1">
-          <tr>
+          <tr >
             <th class="table-active" style="color: white;" scope="col">Numéro du demande</th>
             <th class="table-active" style="color: white;" scope="col">Date demande</th>
             <th class="table-active" style="color: white;" scope="col">Motif</th>
@@ -40,12 +40,12 @@
           </tr>
 
 
-          <tr class="table-striped">
+          <tr class="table-striped"  *ngFor="let o of service.demandeAttestations">
           
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{o.id}}</td>
+            <td>{{o.dateDemande}}</td>
+            <td>{{o.motif}}</td>
+            <td>{{o.statut}}</td>
             <td>
               <button class="btn text-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop-2"
                                   >

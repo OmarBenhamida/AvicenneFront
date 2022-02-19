@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdddemandeFichepaieComponent implements OnInit {
 
+  y = new Date().getFullYear()
+
+  years = [...Array(5).keys()].map((e, i) => this.y - i);
+
   constructor() { }
 
   ngOnInit(): void {

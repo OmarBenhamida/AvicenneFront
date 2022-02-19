@@ -9,7 +9,7 @@ import { DemandeAttestation } from '../models/Demandeattestations.models';
     providedIn: 'root'
 })
 export class DemandeAttestationService {
-    url = 'http://localhost:5505/rest/demandeAttestations';
+    url = 'http://localhost:5505/rest/demandeAttestation';
    demandeAttestations: DemandeAttestation[];
     demandeAttestation: DemandeAttestation;
 
@@ -22,7 +22,7 @@ export class DemandeAttestationService {
     }
 
     getall() {
-        this.http.get(this.url + '/getAll') .toPromise().then(
+        this.http.get(this.url) .toPromise().then(
             res => {
                 this.demandeAttestations = res as DemandeAttestation[];
                 console.log(res);

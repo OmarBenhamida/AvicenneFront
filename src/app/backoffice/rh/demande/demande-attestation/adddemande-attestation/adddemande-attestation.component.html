@@ -21,12 +21,7 @@
       </div>
       <br>
       <div class="row">
-        <div class="col">
-          <div class="col-12" style="text-align: left;">
-            <label class="form-label"><strong>Date Demande:</strong></label>
-                <input type="date"  name="datedebut" class="form-control" >
-              </div>
-        </div>
+
         <div class="col">
           <div class="col-12" style="text-align: left;"><label class="form-label"><strong>motif
                 :</strong></label>
@@ -39,8 +34,15 @@
         <div class="col">
           <div class="col-12" style="text-align: left;">
             <label class="form-label"><strong>statut</strong></label>
-                <input type="text"  name="statut" class="form-control" >
-              </div>
+            <select class="form-select" aria-label="Default select example"   name="etat">
+              <option selected>Etat Demande</option>
+              <option value="Approuvé">Approuvé</option>
+              <option value="En attente">En attente</option>
+              <option value="refusé">refusé</option>
+
+
+            </select>  
+            </div>
         
         </div>
       </div>
